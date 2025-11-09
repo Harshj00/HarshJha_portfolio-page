@@ -11,7 +11,7 @@ export function Navbar() {
     { name: "Certifications", url: "#certifications", icon: Award },
     {
       name: "Resume",
-      url: "https://drive.google.com/file/d/118XLpIOg3IYmhU9QlsHGhp_wSJU5UBm5/view?usp=sharing",
+      url: "https://drive.google.com/file/d/1t8Dh0Fu0_PBZWoy775acHM0AP7rOkmHZ/view?usp=sharing",
       icon: FileText,
     },
     { name: "Contact", url: "#contact", icon: Mail },

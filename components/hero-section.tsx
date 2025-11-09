@@ -67,7 +67,7 @@ export function HeroSection() {
                 className="border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
               >
                 <a
-                  href="https://drive.google.com/file/d/118XLpIOg3IYmhU9QlsHGhp_wSJU5UBm5/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1t8Dh0Fu0_PBZWoy775acHM0AP7rOkmHZ/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 group"

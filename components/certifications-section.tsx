@@ -32,7 +32,7 @@ const certifications = [
     id: 4,
     title: "Infosys Springboard Database & SQL Certified",
     issuer: "Infosys",
-    date: "2024",
+    date: "2025",
     description: "Proficiency in database design and SQL query optimization",
     image: "/certifications/infosys-sql.png",
   },

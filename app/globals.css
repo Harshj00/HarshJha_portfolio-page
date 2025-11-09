@@ -129,6 +129,67 @@
     scroll-behavior: smooth;
   }
 
+  /* Added gliding animations for smooth element transitions */
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Button gliding hover effect */
+  @keyframes button-glide {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(4px);
+    }
+  }
+
+  .glide-in-left {
+    animation: slide-in-left 0.6s ease-out forwards;
+  }
+
+  .glide-in-right {
+    animation: slide-in-right 0.6s ease-out forwards;
+  }
+
+  .fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  .button-glide:hover {
+    animation: button-glide 0.4s ease-in-out;
+  }
+
   /* Added glass effect animation for profile image border */
   @keyframes glass-glow {
     0%,

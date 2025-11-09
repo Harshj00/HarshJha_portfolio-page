@@ -7,7 +7,9 @@ import { ContactSection } from "@/components/contact-section"
 export default function Home() {
   return (
     <main className="w-full overflow-hidden">
-      <HeroSection />
+      <section id="home">
+        <HeroSection />
+      </section>
       <section id="about-me">
         <AboutMe />
       </section>

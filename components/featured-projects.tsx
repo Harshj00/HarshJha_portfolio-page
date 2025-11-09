@@ -65,7 +65,7 @@ export function FeaturedProjects() {
             </span>
           </h2>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-            Showcasing my latest work in web development, 3D design, and interactive experiences
+            Showcasing my Work in Full Stack, Machine Learning, Generative AI, Multicloud etc.
           </p>
         </div>
 

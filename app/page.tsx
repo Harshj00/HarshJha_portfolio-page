@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/hero-section"
 import { AboutMe } from "@/components/about-me"
 import { FeaturedProjects } from "@/components/featured-projects"
+import { CertificationsSection } from "@/components/certifications-section"
 import { CTASection } from "@/components/cta-section"
 import { ContactSection } from "@/components/contact-section"
 
@@ -15,6 +16,9 @@ export default function Home() {
       </section>
       <section id="projects">
         <FeaturedProjects />
+      </section>
+      <section id="certifications">
+        <CertificationsSection />
       </section>
       <CTASection />
       <section id="contact">

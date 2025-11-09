@@ -86,7 +86,7 @@ export function HeroSection() {
             <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-cyan-500/30 via-blue-500/20 to-transparent blur-2xl" />
 
             {/* Outer frost layer */}
-            <div className="absolute -inset-4 rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 backdrop-blur-md mx-0 my-2.5" />
+            <div className="absolute -inset-4 border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 backdrop-blur-md mx-0 rounded-xl my-1" />
 
             {/* Middle sandwich layer */}
             <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-slate-800/50 via-cyan-900/30 to-blue-900/40 backdrop-blur-lg" />
@@ -101,7 +101,7 @@ export function HeroSection() {
                 src="/images/design-mode/1000041629.png.jpeg"
                 alt="Harsh Kumar Jha - Software Developer"
                 fill
-                className="object-cover opacity-100 px-0 py-0 my-0 mx-3.5 border-0 rounded-2xl"
+                className="object-cover opacity-100 px-0 py-0 my-0 border-0 rounded-2xl mx-0"
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
               />

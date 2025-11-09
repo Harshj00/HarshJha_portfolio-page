@@ -13,7 +13,7 @@ const certifications = [
     date: "2025",
     description: "Certified expertise in OCI Generative AI services and implementations",
     image: "images/certifications/oracle-genai.png",
-    link: "#",
+    link: "https://drive.google.com/file/d/10fWS2v9nl5dTNhZ4jn8Z6AYN6emJnx3S/view",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const certifications = [
     date: "2025",
     description: "Advanced knowledge in multi-cloud architecture design and deployment",
     image: "images/certifications/oracle-architect.png",
-    link: "#",
+    link: "https://drive.google.com/file/d/140oqhd7OTYCzYKQk2MU1Orq24QlSrRm6/view",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const certifications = [
     date: "2025",
     description: "Proficiency in developing applications on Oracle Cloud Infrastructure",
     image: "images/certifications/oracle-developer.png",
-    link: "#",
+    link: "https://drive.google.com/file/d/1_ksrgzGOKjpDabI0XSfaqyBGIdynABAP/view",
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ const certifications = [
     date: "2025",
     description: "Proficiency in database design and SQL query optimization",
     image: "images/certifications/infosys-sql.png",
-    link: "#",
+    link: "https://drive.google.com/file/d/1XcqCmDBMAAJv0T5lNLTT8GLuKyuqkFYa/view",
   },
 ]
 

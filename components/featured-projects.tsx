@@ -8,7 +8,8 @@ const projects = [
   {
     id: 1,
     title: "GreenHouse Gas Emission Prediction Model",
-    description: "Predict Future GHG Emission Based on Historical Data. Used Machine Learning Models: Linear Regression, Random Forest to Identify Trends And Patterns in GHG."
+    description:
+      "Predict Future GHG Emission Based on Historical Data. Used Machine Learning Models: Linear Regression, Random Forest to Identify Trends And Patterns in GHG.",
     tags: ["Python 3.10+", "Pandas", "Numpy", "Scikit-Learn", "Jupyter", "Matplotlib", "Git/Github"],
     color: "from-cyan-500/20 to-blue-500/20",
     borderColor: "border-cyan-500/30",
@@ -16,23 +17,33 @@ const projects = [
   {
     id: 2,
     title: "House Price Prediction Model",
-    description: "A Machine Learning Model For Predicting House Prices Accurately Based On Various Features Like Location, Size, And Amenities Using Python.",
-    tags: ["Python 3.X", "Numpy (For Data Manipulation)", "Matplotlib", "Seaborn (For Data Visualization)", "Scikit Learn", "XG Boost"],
+    description:
+      "A Machine Learning Model For Predicting House Prices Accurately Based On Various Features Like Location, Size, And Amenities Using Python.",
+    tags: [
+      "Python 3.X",
+      "Numpy (For Data Manipulation)",
+      "Matplotlib",
+      "Seaborn (For Data Visualization)",
+      "Scikit Learn",
+      "XG Boost",
+    ],
     color: "from-blue-500/20 to-purple-500/20",
     borderColor: "border-blue-500/30",
   },
   {
     id: 3,
     title: "Online Real-Time Auction System",
-    description: "Built a full-stack, real-time auction system where users can list items for bidding and place bids on active auctions. This project is a step up from a basic e-commerce application because it introduces the complexities of real-time updates and managing high-frequency transactions."
+    description:
+      "Built a full-stack, real-time auction system where users can list items for bidding and place bids on active auctions. This project is a step up from a basic e-commerce application because it introduces the complexities of real-time updates and managing high-frequency transactions.",
     tags: ["Java", "Spring Boot", "PostgreSQL", "Maven or Gradle", "Docker"],
     color: "from-purple-500/20 to-pink-500/20",
     borderColor: "border-purple-500/30",
   },
   {
     id: 4,
-    title: " Daily Planner with Reminders",
-    description: " single-page web application where a user can create, edit, and delete tasks. The application persists this data in a database, ensuring tasks are not lost when the browser is closed.",
+    title: "Daily Planner with Reminders",
+    description:
+      "A single-page web application where a user can create, edit, and delete tasks. The application persists this data in a database, ensuring tasks are not lost when the browser is closed.",
     tags: ["React", "JavaScript", "Java", "SpringBoot", "Git/Github"],
     color: "from-pink-500/20 to-rose-500/20",
     borderColor: "border-pink-500/30",

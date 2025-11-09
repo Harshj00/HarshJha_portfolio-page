@@ -1,7 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Linkedin, Twitter, Github, Instagram } from "lucide-react"
+import { Linkedin, Github, Instagram } from "lucide-react"
+
+const XIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.6l-5.165-6.75-5.868 6.75h-3.306l7.73-8.835L2.577 2.25h6.76l4.67 6.168L17.142 2.25h.102zm-1.554 19.5h1.828L7.97 5.028H6.11l10.58 16.722z" />
+  </svg>
+)
 
 export function ContactSection() {
   const [copied, setCopied] = useState(false)
@@ -10,32 +16,39 @@ export function ContactSection() {
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://www.linkedin.com/in/harshgod/",
-      color: "hover:text-blue-600",
+      url: "https://linkedin.com/in/harshgod",
+      color: "text-linkedin",
+      borderColor: "border-blue-600/40",
+      hoverColor: "hover:text-blue-400",
     },
     {
-      name: "Twitter",
-      icon: Twitter,
+      name: "X",
+      icon: XIcon,
       url: "https://x.com/harsh_j0",
-      color: "hover:text-blue-400",
+      color: "text-white",
+      borderColor: "border-white/40",
+      hoverColor: "hover:text-cyan-300",
     },
     {
       name: "GitHub",
       icon: Github,
       url: "https://github.com/Harshj00",
-      color: "hover:text-gray-400",
+      color: "text-white",
+      borderColor: "border-white/40",
+      hoverColor: "hover:text-cyan-300",
     },
     {
       name: "Instagram",
       icon: Instagram,
       url: "https://www.instagram.com/byte_biceps/",
-      color: "hover:text-pink-500",
+      color: "text-pink-500",
+      borderColor: "border-pink-500/40",
+      hoverColor: "hover:text-pink-300",
     },
   ]
 
   return (
     <section className="relative w-full py-20 px-4 md:px-8 bg-background border-t border-border">
-      {/* Reverted gradient background from orange to cyan */}
       <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-background pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto z-10">
@@ -70,7 +83,7 @@ export function ContactSection() {
             <p className="text-sm text-muted-foreground mb-6 text-center">Follow me on social media</p>
             <div className="flex gap-6 justify-center text-center items-center md:justify-center">
               {socialLinks.map((social) => {
-                const Icon = social.icon
+                const Icon = social.name === "X" ? XIcon : social.icon
                 return (
                   <a
                     key={social.name}
@@ -78,7 +91,7 @@ export function ContactSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.name}
-                    className={`inline-flex items-center justify-center w-12 h-12 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-foreground transition-all duration-300 ${social.color} hover:bg-cyan-500/10 hover:border-cyan-500/60`}
+                    className={`inline-flex items-center justify-center w-12 h-12 rounded-full ${social.borderColor} ${social.color} border-2 bg-transparent transition-all duration-300 hover:scale-110 ${social.hoverColor}`}
                   >
                     <Icon className="w-5 h-5" />
                   </a>

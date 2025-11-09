@@ -190,6 +190,11 @@
     animation: button-glide 0.4s ease-in-out;
   }
 
+  /* Added smooth transition for social icon hover effects */
+  a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   /* Added glass effect animation for profile image border */
   @keyframes glass-glow {
     0%,

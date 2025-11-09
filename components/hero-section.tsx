@@ -1,6 +1,6 @@
 "use client"
 
-import { SplineScene } from "@/components/ui/spline-scene"
+import Image from "next/image"
 import { Spotlight } from "@/components/ui/spotlight"
 import { Button } from "@/components/ui/button"
 import { ChevronRight } from "lucide-react"
@@ -80,12 +80,30 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Content - 3D Scene */}
+          {/* Right Content - Profile Image */}
           <div className="relative h-[500px] md:h-[600px]">
-            <div className="absolute inset-0 rounded-2xl overflow-hidden border border-cyan-500/20 bg-slate-800/50 backdrop-blur-sm">
-              <SplineScene
-                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                className="w-full h-full"
+            {/* Outer glow layer */}
+            <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-cyan-500/30 via-blue-500/20 to-transparent blur-2xl" />
+
+            {/* Outer frost layer */}
+            <div className="absolute -inset-4 rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 backdrop-blur-md" />
+
+            {/* Middle sandwich layer */}
+            <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-slate-800/50 via-cyan-900/30 to-blue-900/40 backdrop-blur-lg" />
+
+            {/* Main image container with enhanced glass effect */}
+            <div className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-cyan-400/40 bg-gradient-to-br from-cyan-500/25 via-slate-800/50 to-blue-600/25 backdrop-blur-xl shadow-2xl shadow-cyan-500/30">
+              {/* Multi-layer shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-white/5 to-transparent pointer-events-none" />
+
+              <Image
+                src="/profile.png"
+                alt="Harsh Kumar Jha - Software Developer"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

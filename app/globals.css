@@ -129,6 +129,22 @@
     scroll-behavior: smooth;
   }
 
+  /* Added glass effect animation for profile image border */
+  @keyframes glass-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(0, 217, 255, 0.3), inset 0 0 20px rgba(0, 217, 255, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(0, 217, 255, 0.5), inset 0 0 30px rgba(0, 217, 255, 0.15);
+    }
+  }
+
+  .glass-profile {
+    animation: glass-glow 4s ease-in-out infinite;
+    backdrop-filter: blur(20px);
+  }
+
   /* Optimized keyframe animations for performance */
   @keyframes spotlight {
     0%,
@@ -146,6 +162,37 @@
     will-change: transform, opacity;
     transform: translateZ(0);
     backface-visibility: hidden;
+  }
+
+  /* Added layered sandwich effect animations */
+  @keyframes sandwich-layer-1 {
+    0%,
+    100% {
+      box-shadow: 0 0 30px rgba(0, 217, 255, 0.3), 0 20px 60px rgba(0, 100, 255, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(0, 217, 255, 0.4), 0 20px 80px rgba(0, 100, 255, 0.3);
+    }
+  }
+
+  @keyframes sandwich-layer-2 {
+    0%,
+    100% {
+      transform: scale(0.98);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .profile-image-wrapper {
+    animation: sandwich-layer-1 4s ease-in-out infinite;
+  }
+
+  .profile-image-wrapper::before {
+    animation: sandwich-layer-2 6s ease-in-out infinite;
   }
 
   @supports (scroll-behavior: smooth) {

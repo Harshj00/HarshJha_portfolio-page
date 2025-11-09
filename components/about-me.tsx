@@ -64,7 +64,7 @@ export function AboutMe() {
             </div>
 
             <p className="text-muted-foreground leading-relaxed text-lg">
-              I am a Aspiring Software Developer pursuing B.Tech in Computer Science and Engineering at K.R. Mangalam
+              I am an Aspiring Software Developer pursuing B.Tech in Computer Science and Engineering at K.R. Mangalam
               University. Experienced in software development with hands-on skills in Java, Python, data structures, and
               software testing. Specialized in AI/ML and Generative AI with focus on Large Language Models
               (LLMs).Passionate about coding, problem-solving, and delivering high-quality, well-tested software

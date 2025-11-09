@@ -79,9 +79,9 @@ export function ContactSection() {
           </div>
 
           {/* Social links */}
-          <div className="flex-1 glide-in-right py-0 px-0 my-0 mx-0">
-            <p className="text-sm text-muted-foreground mb-6 text-center">Follow me on social media</p>
-            <div className="flex gap-6 justify-center text-center items-center md:justify-center mx-0 my-0">
+          <div className="flex-1 glide-in-right py-0 px-0 my-0 mx-0 md:text-right">
+            <p className="text-sm text-muted-foreground mb-6 text-center md:text-right">Follow me on social media</p>
+            <div className="flex gap-6 justify-center text-center items-center md:justify-end mx-0 my-0">
               {socialLinks.map((social) => {
                 const Icon = social.name === "X" ? XIcon : social.icon
                 return (

@@ -8,10 +8,16 @@ export default function Home() {
   return (
     <main className="w-full overflow-hidden">
       <HeroSection />
-      <AboutMe />
-      <FeaturedProjects />
+      <section id="about-me">
+        <AboutMe />
+      </section>
+      <section id="projects">
+        <FeaturedProjects />
+      </section>
       <CTASection />
-      <ContactSection />
+      <section id="contact">
+        <ContactSection />
+      </section>
     </main>
   )
 }

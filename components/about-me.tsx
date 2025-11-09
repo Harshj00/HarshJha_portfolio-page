@@ -2,8 +2,29 @@
 
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { useEffect, useRef } from "react"
 
 export function AboutMe() {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("scroll-reveal")
+          }
+        })
+      },
+      { threshold: 0.1 },
+    )
+
+    const elements = containerRef.current?.querySelectorAll("[data-animate]")
+    elements?.forEach((el) => observer.observe(el))
+
+    return () => observer.disconnect()
+  }, [])
+
   const skills = [
     "Java SE",
     "Python",
@@ -18,22 +39,23 @@ export function AboutMe() {
     "Data Structures",
     "Machine Learning",
     "SQL",
-    "MultiCloud"
+    "MultiCloud",
   ]
 
   return (
     <section
       className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-background border-b border-border"
       id="about-me"
+      ref={containerRef}
     >
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/2 w-1/2 h-1/2 bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent rounded-full blur-3xl -translate-x-1/2" />
+        <div className="parallax-float absolute top-0 left-1/2 w-1/2 h-1/2 bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent rounded-full blur-3xl -translate-x-1/2" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* About content */}
-          <div className="space-y-6">
+          <div className="space-y-6" data-animate>
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 About <span className="text-primary">Me</span>
@@ -73,14 +95,15 @@ export function AboutMe() {
           </div>
 
           {/* Skills section */}
-          <div className="space-y-6">
+          <div className="space-y-6" data-animate>
             <Card className="p-8 bg-primary/5 border-primary/30 backdrop-blur-sm">
               <h3 className="text-2xl font-bold mb-6 text-foreground">Technical Skills</h3>
               <div className="flex flex-wrap gap-3">
-                {skills.map((skill) => (
+                {skills.map((skill, index) => (
                   <Badge
                     key={skill}
-                    className="bg-primary/20 text-primary border border-primary/40 hover:bg-primary/30 px-4 py-2 text-sm cursor-default"
+                    className="scroll-reveal bg-primary/20 text-primary border border-primary/40 hover:bg-primary/30 px-4 py-2 text-sm cursor-default"
+                    style={{ animationDelay: `${index * 50}ms` }}
                   >
                     {skill}
                   </Badge>
@@ -88,7 +111,7 @@ export function AboutMe() {
               </div>
             </Card>
 
-            <Card className="p-8 bg-secondary/5 border-secondary/30 backdrop-blur-sm">
+            <Card className="p-8 bg-secondary/5 border-secondary/30 backdrop-blur-sm" data-animate>
               <h3 className="text-2xl font-bold mb-4 text-foreground">Quick Facts</h3>
               <div className="space-y-3 text-muted-foreground">
                 <p>
@@ -100,8 +123,11 @@ export function AboutMe() {
                 </p>
                 <p>
                   <span className="font-semibold text-foreground">Certifications:</span>
-                 <br />• Oracle Cloud Infrastructure Generative AI Professional <br /> • Oracle Cloud Infrastructure Developer
-                  Professional<br />• OCI Multi Cloud Architect Professional<br />• OCI Certified Foundation Associate<br />• Infosys Springboard Database & SQL Certified.
+                  <br />• Oracle Cloud Infrastructure Generative AI Professional <br /> • Oracle Cloud Infrastructure
+                  Developer Professional
+                  <br />• OCI Multi Cloud Architect Professional
+                  <br />• OCI Certified Foundation Associate
+                  <br />• Infosys Springboard Database & SQL Certified.
                 </p>
               </div>
             </Card>

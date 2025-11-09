@@ -4,15 +4,34 @@ import Image from "next/image"
 import { Spotlight } from "@/components/ui/spotlight"
 import { Button } from "@/components/ui/button"
 import { ChevronRight } from "lucide-react"
+import { useEffect, useRef } from "react"
 
 export function HeroSection() {
+  const profileRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (profileRef.current) {
+        const scrollY = window.scrollY
+        const parallaxSpeed = 0.5
+        profileRef.current.style.transform = `translateY(${scrollY * parallaxSpeed}px)`
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
     <section className="relative w-full min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden flex items-center">
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#00d9ff" />
 
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent rounded-full blur-3xl" />
-        <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-blue-500/10 via-transparent to-transparent rounded-full blur-3xl" />
+        <div className="parallax-float absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent rounded-full blur-3xl" />
+        <div
+          className="parallax-float absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-blue-500/10 via-transparent to-transparent rounded-full blur-3xl"
+          style={{ animationDelay: "0.5s" }}
+        />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -20,16 +39,22 @@ export function HeroSection() {
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 w-fit">
+              <div className="scroll-reveal inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 w-fit">
                 <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                 <span className="text-sm font-medium text-cyan-300">Hello👋 I am Harsh Kumar Jha </span>
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+              <h1
+                className="scroll-reveal text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
+                style={{ animationDelay: "0.1s" }}
+              >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-white">
                   Software Developer 🍁
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-slate-300 max-w-lg leading-relaxed text-left">
+              <p
+                className="scroll-reveal text-lg md:text-xl text-slate-300 max-w-lg leading-relaxed text-left"
+                style={{ animationDelay: "0.2s" }}
+              >
                 Crafting immersive digital experiences with cutting-edge technology | Java • Spring Boot • Generative AI
                 Professional & Oracle Multicloud Certified | Data Structures & Algorithms.
               </p>
@@ -65,15 +90,15 @@ export function HeroSection() {
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-8">
-              <div>
+              <div className="scroll-reveal" style={{ animationDelay: "0.3s" }}>
                 <div className="text-2xl font-bold text-cyan-400">15+</div>
                 <p className="text-sm text-slate-400">Projects Completed</p>
               </div>
-              <div>
+              <div className="scroll-reveal" style={{ animationDelay: "0.4s" }}>
                 <div className="text-2xl font-bold text-cyan-400">2+</div>
                 <p className="text-sm text-slate-400">Years Experience</p>
               </div>
-              <div>
+              <div className="scroll-reveal" style={{ animationDelay: "0.5s" }}>
                 <div className="text-2xl font-bold text-cyan-400">99%</div>
                 <p className="text-sm text-slate-400">Client Satisfaction</p>
               </div>
@@ -81,9 +106,9 @@ export function HeroSection() {
           </div>
 
           {/* Right Content - Profile Image */}
-          <div className="relative h-[500px] md:h-[600px]">
+          <div ref={profileRef} className="relative h-[500px] md:h-[600px] will-change-transform">
             {/* Outer glow layer */}
-            <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-cyan-500/30 via-blue-500/20 to-transparent blur-2xl" />
+            <div className="parallax-float absolute -inset-6 rounded-3xl bg-gradient-to-br from-cyan-500/30 via-blue-500/20 to-transparent blur-2xl" />
 
             {/* Outer frost layer */}
             <div className="absolute -inset-4 border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 backdrop-blur-md mx-0 rounded-xl my-1" />

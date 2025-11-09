@@ -120,7 +120,6 @@
 
   html {
     scroll-behavior: smooth;
-    /* Added will-change for better scrolling performance */
     will-change: scroll-position;
   }
 
@@ -129,7 +128,50 @@
     scroll-behavior: smooth;
   }
 
-  /* Added gliding animations for smooth element transitions */
+  /* Added new scroll-triggered reveal animations for enhanced visual appeal */
+  @keyframes scroll-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scroll-scale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes scroll-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Parallax-like effect for background elements */
+  @keyframes parallax-float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Existing animations */
   @keyframes slide-in-left {
     from {
       opacity: 0;
@@ -163,7 +205,6 @@
     }
   }
 
-  /* Button gliding hover effect */
   @keyframes button-glide {
     0%,
     100% {
@@ -172,6 +213,44 @@
     50% {
       transform: translateX(4px);
     }
+  }
+
+  /* Utility classes for scroll animations */
+  .scroll-reveal {
+    animation: scroll-reveal 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .scroll-scale {
+    animation: scroll-scale 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .scroll-fade-in {
+    animation: scroll-fade-in 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .parallax-float {
+    animation: parallax-float 6s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  /* Added stagger animation delays for sequential reveal effect */
+  .scroll-reveal:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .scroll-reveal:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .scroll-reveal:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .scroll-reveal:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .scroll-reveal:nth-child(5) {
+    animation-delay: 0.4s;
   }
 
   .glide-in-left {
@@ -190,12 +269,10 @@
     animation: button-glide 0.4s ease-in-out;
   }
 
-  /* Added smooth transition for social icon hover effects */
   a {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Added glass effect animation for profile image border */
   @keyframes glass-glow {
     0%,
     100% {
@@ -211,7 +288,6 @@
     backdrop-filter: blur(20px);
   }
 
-  /* Optimized keyframe animations for performance */
   @keyframes spotlight {
     0%,
     100% {
@@ -222,7 +298,6 @@
     }
   }
 
-  /* Added transform3d and will-change for GPU acceleration */
   .animate-spotlight {
     animation: spotlight 3s ease-in-out infinite;
     will-change: transform, opacity;
@@ -230,7 +305,6 @@
     backface-visibility: hidden;
   }
 
-  /* Added layered sandwich effect animations */
   @keyframes sandwich-layer-1 {
     0%,
     100% {

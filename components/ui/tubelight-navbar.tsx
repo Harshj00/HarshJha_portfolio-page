@@ -21,6 +21,7 @@ export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
 
+  // ========== Detect Mobile ==========
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768)
@@ -31,6 +32,37 @@ export function NavBar({ items, className }: NavBarProps) {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
+  // ========== Scroll Spy Logic ==========
+  useEffect(() => {
+    const sectionIds = items
+      .map((item) => item.url.startsWith("#") ? item.url.substring(1) : null)
+      .filter(Boolean) as string[]
+
+    const handleScroll = () => {
+      let currentSection = sectionIds[0]
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id)
+        if (el) {
+          const top = el.getBoundingClientRect().top
+          if (top <= 120) {
+            currentSection = id
+          }
+        }
+      }
+
+      const matched = items.find((i) => i.url === `#${currentSection}`)
+      if (matched && matched.name !== activeTab) {
+        setActiveTab(matched.name)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    handleScroll()
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [items, activeTab])
+
   return (
     <nav
       className={cn(
@@ -40,8 +72,8 @@ export function NavBar({ items, className }: NavBarProps) {
       )}
     >
       <div
-        className="flex items-center gap-1 bg-background/60 border border-border backdrop-blur-xl 
-                   px-3 py-2 rounded-full shadow-lg"
+        className="flex items-center gap-1 bg-background/60 border border-border
+                   backdrop-blur-xl px-3 py-2 rounded-full shadow-lg"
       >
         {items.map((item) => {
           const Icon = item.icon
@@ -54,16 +86,14 @@ export function NavBar({ items, className }: NavBarProps) {
               onClick={() => setActiveTab(item.name)}
               className={cn(
                 `relative cursor-pointer font-medium rounded-full transition-colors flex 
-                 ${isMobile ? "p-3" : "px-6 py-2"} 
+                ${isMobile ? "p-3" : "px-6 py-2"} 
                  items-center gap-2 text-sm select-none`,
                 "text-foreground/80 hover:text-primary",
                 isActive && "text-primary"
               )}
             >
-              {/* Desktop Label */}
               <span className="hidden md:inline">{item.name}</span>
 
-              {/* Mobile Icon */}
               <span className="md:hidden flex justify-center">
                 <Icon size={20} strokeWidth={2.3} />
               </span>

@@ -35,7 +35,6 @@ export function NavBar({ items, className }: NavBarProps) {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-  // ========== Scroll Spy ==========
   useEffect(() => {
     const sectionIds = items
       .map((item) => item.url.startsWith("#") ? item.url.substring(1) : null)

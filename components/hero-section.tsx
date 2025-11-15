@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { Spotlight } from "@/components/ui/spotlight"
 import { Button } from "@/components/ui/button"
-import { ChevronRight } from "lucide-react"
+import { ArrowRightCircleIcon,ArrowDownFromLineIcon } from "lucide-react"
 import { useEffect, useRef } from "react"
 
 export function HeroSection() {
@@ -73,7 +73,7 @@ export function HeroSection() {
                   className="inline-flex items-center gap-2 group"
                 >
                   Resume
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRightCircleIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
               </Button>
               <Button
@@ -83,7 +83,7 @@ export function HeroSection() {
               >
                 <a href="#about-me" className="inline-flex items-center gap-2 group">
                   Let's Explore
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowDownFromLineIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
               </Button>
             </div>

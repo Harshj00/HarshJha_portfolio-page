@@ -21,10 +21,8 @@ export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
 
-  // Lock to prevent scrollspy overriding click
   const clickLock = useRef(false)
 
-  // ========== Detect Mobile ==========
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768)

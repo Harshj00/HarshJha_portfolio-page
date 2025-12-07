@@ -274,14 +274,14 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Updated glass glow from cyan to white/silver */
+  /* Updated glass glow to use ColorHunt blue palette */
   @keyframes glass-glow {
     0%,
     100% {
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 20px rgba(74, 112, 169, 0.3), inset 0 0 20px rgba(143, 171, 212, 0.1);
     }
     50% {
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3), inset 0 0 30px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 30px rgba(74, 112, 169, 0.4), inset 0 0 30px rgba(143, 171, 212, 0.15);
     }
   }
 
@@ -307,14 +307,14 @@
     backface-visibility: hidden;
   }
 
-  /* Updated sandwich layer animations from cyan to white */
+  /* Updated sandwich layer animations to use ColorHunt blue palette */
   @keyframes sandwich-layer-1 {
     0%,
     100% {
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2), 0 20px 60px rgba(150, 150, 150, 0.15);
+      box-shadow: 0 0 30px rgba(74, 112, 169, 0.3), 0 20px 60px rgba(143, 171, 212, 0.2);
     }
     50% {
-      box-shadow: 0 0 40px rgba(255, 255, 255, 0.3), 0 20px 80px rgba(150, 150, 150, 0.2);
+      box-shadow: 0 0 40px rgba(74, 112, 169, 0.4), 0 20px 80px rgba(143, 171, 212, 0.25);
     }
   }
 
@@ -336,6 +336,21 @@
 
   .profile-image-wrapper::before {
     animation: sandwich-layer-2 6s ease-in-out infinite;
+  }
+
+  /* Add consistent tile hover effect using ColorHunt palette */
+  @keyframes tile-glow {
+    0%,
+    100% {
+      box-shadow: 0 4px 20px rgba(74, 112, 169, 0.15);
+    }
+    50% {
+      box-shadow: 0 8px 30px rgba(74, 112, 169, 0.25);
+    }
+  }
+
+  .tile-hover:hover {
+    box-shadow: 0 10px 40px rgba(74, 112, 169, 0.2), 0 0 20px rgba(143, 171, 212, 0.1);
   }
 
   @supports (scroll-behavior: smooth) {

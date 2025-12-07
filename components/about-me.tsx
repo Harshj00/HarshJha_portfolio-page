@@ -94,15 +94,15 @@ export function AboutMe() {
             </div>
           </div>
 
-          {/* Skills section */}
+          {/* Skills section - Updated cards to use consistent ColorHunt palette hover effects */}
           <div className="space-y-6" data-animate>
-            <Card className="p-8 bg-[#0a0a0a]/80 border-[#4A70A9]/25 backdrop-blur-sm">
+            <Card className="p-8 bg-[#0a0a0a]/80 border-[#4A70A9]/30 backdrop-blur-sm hover:border-[#8FABD4]/60 hover:shadow-xl hover:shadow-[#4A70A9]/20 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-6 text-[#EFECE3]">Technical Skills</h3>
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill, index) => (
                   <Badge
                     key={skill}
-                    className="scroll-reveal bg-[#4A70A9]/15 text-[#8FABD4] border border-[#4A70A9]/30 hover:bg-[#4A70A9]/25 px-4 py-2 text-sm cursor-default"
+                    className="scroll-reveal bg-[#4A70A9]/15 text-[#8FABD4] border border-[#4A70A9]/30 hover:bg-[#4A70A9]/25 hover:border-[#8FABD4]/50 px-4 py-2 text-sm cursor-default transition-colors duration-300"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     {skill}
@@ -111,7 +111,10 @@ export function AboutMe() {
               </div>
             </Card>
 
-            <Card className="p-8 bg-[#0a0a0a]/80 border-[#8FABD4]/25 backdrop-blur-sm" data-animate>
+            <Card
+              className="p-8 bg-[#0a0a0a]/80 border-[#4A70A9]/30 backdrop-blur-sm hover:border-[#8FABD4]/60 hover:shadow-xl hover:shadow-[#4A70A9]/20 transition-all duration-300"
+              data-animate
+            >
               <h3 className="text-2xl font-bold mb-4 text-[#EFECE3]">Quick Facts</h3>
               <div className="space-y-3 text-[#EFECE3]/70">
                 <p>

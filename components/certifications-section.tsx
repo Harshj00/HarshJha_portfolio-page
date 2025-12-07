@@ -14,9 +14,6 @@ const certifications = [
     description: "Certified expertise in OCI Generative AI services and implementations",
     image: "images/certifications/oracle-genai.png",
     link: "https://drive.google.com/file/d/10fWS2v9nl5dTNhZ4jn8Z6AYN6emJnx3S/view",
-    accentColor: "from-[#4A70A9]/25 to-[#3A5A8A]/15",
-    borderColor: "border-[#4A70A9]/40",
-    textColor: "text-[#8FABD4]",
   },
   {
     id: 2,
@@ -26,9 +23,6 @@ const certifications = [
     description: "Advanced knowledge in multi-cloud architecture design and deployment",
     image: "images/certifications/oracle-architect.png",
     link: "https://drive.google.com/file/d/140oqhd7OTYCzYKQk2MU1Orq24QlSrRm6/view",
-    accentColor: "from-[#8FABD4]/25 to-[#6B8FC4]/15",
-    borderColor: "border-[#8FABD4]/40",
-    textColor: "text-[#EFECE3]",
   },
   {
     id: 3,
@@ -38,9 +32,6 @@ const certifications = [
     description: "Proficiency in developing applications on Oracle Cloud Infrastructure",
     image: "images/certifications/oracle-developer.png",
     link: "https://drive.google.com/file/d/1_ksrgzGOKjpDabI0XSfaqyBGIdynABAP/view",
-    accentColor: "from-[#EFECE3]/15 to-[#d0d0c8]/10",
-    borderColor: "border-[#EFECE3]/30",
-    textColor: "text-[#EFECE3]",
   },
   {
     id: 4,
@@ -50,9 +41,6 @@ const certifications = [
     description: "Proficiency in database design and SQL query optimization",
     image: "images/certifications/infosys-sql.png",
     link: "https://drive.google.com/file/d/1XcqCmDBMAAJv0T5lNLTT8GLuKyuqkFYa/view",
-    accentColor: "from-[#6B8FC4]/25 to-[#4A70A9]/15",
-    borderColor: "border-[#6B8FC4]/40",
-    textColor: "text-[#8FABD4]",
   },
 ]
 
@@ -99,12 +87,10 @@ export function CertificationsSection() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card
-                className={`group relative overflow-hidden bg-gradient-to-br ${cert.accentColor} border ${cert.borderColor} bg-[#0a0a0a]/50 backdrop-blur-sm hover:border-opacity-80 transition-all duration-300 cursor-pointer hover:shadow-xl hover:shadow-[#4A70A9]/10 hover:-translate-y-1 flex flex-col h-full`}
-              >
-                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${cert.accentColor}`} />
+              <Card className="group relative overflow-hidden bg-gradient-to-br from-[#4A70A9]/10 to-[#8FABD4]/5 border border-[#4A70A9]/30 bg-[#0a0a0a]/50 backdrop-blur-sm hover:border-[#8FABD4]/60 transition-all duration-300 cursor-pointer hover:shadow-xl hover:shadow-[#4A70A9]/20 hover:-translate-y-1 flex flex-col h-full">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#4A70A9] to-[#8FABD4] opacity-60 group-hover:opacity-100 transition-all duration-300" />
 
-                <div className={`relative w-full h-40 overflow-hidden border-b ${cert.borderColor}`}>
+                <div className="relative w-full h-40 overflow-hidden border-b border-[#4A70A9]/30">
                   <Image
                     src={`/${cert.image}`}
                     alt={cert.title}
@@ -114,20 +100,16 @@ export function CertificationsSection() {
                 </div>
 
                 <div className="relative z-10 p-6 flex flex-col flex-grow">
-                  <h3
-                    className={`text-lg font-bold text-[#EFECE3] mb-2 line-clamp-2 group-hover:${cert.textColor} transition-colors duration-300`}
-                  >
+                  <h3 className="text-lg font-bold text-[#EFECE3] mb-2 line-clamp-2 group-hover:text-[#8FABD4] transition-colors duration-300">
                     {cert.title}
                   </h3>
 
-                  <p className={`text-sm ${cert.textColor} font-semibold mb-1`}>{cert.issuer}</p>
+                  <p className="text-sm text-[#8FABD4] font-semibold mb-1">{cert.issuer}</p>
                   <p className="text-xs text-[#EFECE3]/50 mb-4">{cert.date}</p>
 
                   <p className="text-sm text-[#EFECE3]/60 leading-relaxed flex-grow">{cert.description}</p>
 
-                  <div
-                    className={`mt-4 h-1 bg-gradient-to-r ${cert.accentColor} group-hover:opacity-100 opacity-60 transition-all duration-300`}
-                  />
+                  <div className="mt-4 h-1 bg-gradient-to-r from-[#4A70A9] to-[#8FABD4] group-hover:opacity-100 opacity-60 transition-all duration-300" />
                 </div>
               </Card>
             </motion.a>

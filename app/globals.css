@@ -4,30 +4,34 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.12 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.08 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.57 0.213 202.92);
-  --primary-foreground: oklch(0.08 0 0);
-  --secondary: oklch(0.45 0.15 198.31);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.25 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.57 0.213 202.92);
-  --accent-foreground: oklch(0.08 0 0);
+  /* New premium color palette - deep slate with warm teal accent */
+  --background: oklch(0.12 0.02 250);
+  --foreground: oklch(0.95 0.01 250);
+  --card: oklch(0.16 0.02 250);
+  --card-foreground: oklch(0.95 0.01 250);
+  --popover: oklch(0.14 0.02 250);
+  --popover-foreground: oklch(0.95 0.01 250);
+  /* Primary: Warm Teal */
+  --primary: oklch(0.7 0.15 175);
+  --primary-foreground: oklch(0.12 0.02 250);
+  /* Secondary: Muted slate */
+  --secondary: oklch(0.55 0.03 250);
+  --secondary-foreground: oklch(0.95 0.01 250);
+  --muted: oklch(0.22 0.02 250);
+  --muted-foreground: oklch(0.65 0.02 250);
+  /* Accent: Warm amber */
+  --accent: oklch(0.75 0.14 75);
+  --accent-foreground: oklch(0.12 0.02 250);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.2 0 0);
-  --input: oklch(0.15 0 0);
-  --ring: oklch(0.57 0.213 202.92);
-  --chart-1: oklch(0.57 0.213 202.92);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --border: oklch(0.25 0.02 250);
+  --input: oklch(0.18 0.02 250);
+  --ring: oklch(0.7 0.15 175);
+  --chart-1: oklch(0.7 0.15 175);
+  --chart-2: oklch(0.75 0.14 75);
+  --chart-3: oklch(0.65 0.12 350);
+  --chart-4: oklch(0.7 0.14 280);
+  --chart-5: oklch(0.68 0.15 145);
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
@@ -40,33 +44,33 @@
 }
 
 .dark {
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.12 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.08 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.57 0.213 202.92);
-  --primary-foreground: oklch(0.08 0 0);
-  --secondary: oklch(0.45 0.15 198.31);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.25 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.57 0.213 202.92);
-  --accent-foreground: oklch(0.08 0 0);
+  --background: oklch(0.12 0.02 250);
+  --foreground: oklch(0.95 0.01 250);
+  --card: oklch(0.16 0.02 250);
+  --card-foreground: oklch(0.95 0.01 250);
+  --popover: oklch(0.14 0.02 250);
+  --popover-foreground: oklch(0.95 0.01 250);
+  --primary: oklch(0.7 0.15 175);
+  --primary-foreground: oklch(0.12 0.02 250);
+  --secondary: oklch(0.55 0.03 250);
+  --secondary-foreground: oklch(0.95 0.01 250);
+  --muted: oklch(0.22 0.02 250);
+  --muted-foreground: oklch(0.65 0.02 250);
+  --accent: oklch(0.75 0.14 75);
+  --accent-foreground: oklch(0.12 0.02 250);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.2 0 0);
-  --input: oklch(0.15 0 0);
-  --ring: oklch(0.57 0.213 202.92);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
+  --border: oklch(0.25 0.02 250);
+  --input: oklch(0.18 0.02 250);
+  --ring: oklch(0.7 0.15 175);
+  --chart-1: oklch(0.7 0.15 175);
+  --chart-2: oklch(0.75 0.14 75);
+  --chart-3: oklch(0.65 0.12 350);
+  --chart-4: oklch(0.7 0.14 280);
+  --chart-5: oklch(0.68 0.15 145);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: oklch(0.7 0.15 175);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
@@ -128,7 +132,6 @@
     scroll-behavior: smooth;
   }
 
-  /* Added new scroll-triggered reveal animations for enhanced visual appeal */
   @keyframes scroll-reveal {
     from {
       opacity: 0;
@@ -160,7 +163,6 @@
     }
   }
 
-  /* Parallax-like effect for background elements */
   @keyframes parallax-float {
     0%,
     100% {
@@ -171,7 +173,6 @@
     }
   }
 
-  /* Existing animations */
   @keyframes slide-in-left {
     from {
       opacity: 0;
@@ -215,7 +216,6 @@
     }
   }
 
-  /* Utility classes for scroll animations */
   .scroll-reveal {
     animation: scroll-reveal 0.8s ease-out forwards;
     opacity: 0;
@@ -234,9 +234,10 @@
   .parallax-float {
     animation: parallax-float 6s ease-in-out infinite;
     will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
-  /* Added stagger animation delays for sequential reveal effect */
   .scroll-reveal:nth-child(1) {
     animation-delay: 0s;
   }
@@ -273,13 +274,14 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* Updated glass glow from cyan to white/silver */
   @keyframes glass-glow {
     0%,
     100% {
-      box-shadow: 0 0 20px rgba(0, 217, 255, 0.3), inset 0 0 20px rgba(0, 217, 255, 0.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.05);
     }
     50% {
-      box-shadow: 0 0 30px rgba(0, 217, 255, 0.5), inset 0 0 30px rgba(0, 217, 255, 0.15);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3), inset 0 0 30px rgba(255, 255, 255, 0.1);
     }
   }
 
@@ -305,13 +307,14 @@
     backface-visibility: hidden;
   }
 
+  /* Updated sandwich layer animations from cyan to white */
   @keyframes sandwich-layer-1 {
     0%,
     100% {
-      box-shadow: 0 0 30px rgba(0, 217, 255, 0.3), 0 20px 60px rgba(0, 100, 255, 0.2);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2), 0 20px 60px rgba(150, 150, 150, 0.15);
     }
     50% {
-      box-shadow: 0 0 40px rgba(0, 217, 255, 0.4), 0 20px 80px rgba(0, 100, 255, 0.3);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.3), 0 20px 80px rgba(150, 150, 150, 0.2);
     }
   }
 

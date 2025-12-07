@@ -3,33 +3,17 @@
 import Image from "next/image"
 import { Spotlight } from "@/components/ui/spotlight"
 import { Button } from "@/components/ui/button"
-import { ArrowRightCircleIcon,ArrowDownFromLineIcon } from "lucide-react"
-import { useEffect, useRef } from "react"
+import { ArrowRightCircleIcon, ArrowDownFromLineIcon } from "lucide-react"
 
 export function HeroSection() {
-  const profileRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (profileRef.current) {
-        const scrollY = window.scrollY
-        const parallaxSpeed = 0.5
-        profileRef.current.style.transform = `translateY(${scrollY * parallaxSpeed}px)`
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
   return (
     <section className="relative w-full min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden flex items-center">
-      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#00d9ff" />
+      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#14b8a6" />
 
       <div className="absolute inset-0 overflow-hidden">
-        <div className="parallax-float absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent rounded-full blur-3xl" />
+        <div className="parallax-float absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-teal-500/8 via-transparent to-transparent rounded-full blur-3xl" />
         <div
-          className="parallax-float absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-blue-500/10 via-transparent to-transparent rounded-full blur-3xl"
+          className="parallax-float absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-amber-500/5 via-transparent to-transparent rounded-full blur-3xl"
           style={{ animationDelay: "0.5s" }}
         />
       </div>
@@ -39,20 +23,20 @@ export function HeroSection() {
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-8">
             <div className="space-y-4">
-              <div className="scroll-reveal inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 w-fit">
-                <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                <span className="text-sm font-medium text-cyan-300">Hello👋 I am Harsh Kumar Jha </span>
+              <div className="scroll-reveal inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 w-fit">
+                <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
+                <span className="text-sm font-medium text-slate-200">Hello I am Harsh Kumar Jha </span>
               </div>
               <h1
                 className="scroll-reveal text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
                 style={{ animationDelay: "0.1s" }}
               >
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-white">
-                  Software Developer 🍁
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-100 via-teal-200 to-slate-100">
+                  Software Developer
                 </span>
               </h1>
               <p
-                className="scroll-reveal text-lg md:text-xl text-slate-300 max-w-lg leading-relaxed text-left"
+                className="scroll-reveal text-lg md:text-xl text-slate-400 max-w-lg leading-relaxed text-left"
                 style={{ animationDelay: "0.2s" }}
               >
                 Crafting immersive digital experiences with cutting-edge technology | Java • Spring Boot • Generative AI
@@ -64,7 +48,7 @@ export function HeroSection() {
               <Button
                 asChild
                 variant="outline"
-                className="border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
+                className="border-teal-500/40 text-slate-200 hover:bg-teal-500/10 hover:border-teal-400/60 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
               >
                 <a
                   href="https://drive.google.com/file/d/1t8Dh0Fu0_PBZWoy775acHM0AP7rOkmHZ/view?usp=sharing"
@@ -79,7 +63,7 @@ export function HeroSection() {
               <Button
                 asChild
                 variant="outline"
-                className="border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
+                className="border-teal-500/40 text-slate-200 hover:bg-teal-500/10 hover:border-teal-400/60 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
               >
                 <a href="#about-me" className="inline-flex items-center gap-2 group">
                   Let's Explore
@@ -91,36 +75,29 @@ export function HeroSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-8">
               <div className="scroll-reveal" style={{ animationDelay: "0.3s" }}>
-                <div className="text-2xl font-bold text-cyan-400">15+</div>
-                <p className="text-sm text-slate-400">Projects Completed</p>
+                <div className="text-2xl font-bold text-teal-300">15+</div>
+                <p className="text-sm text-slate-500">Projects Completed</p>
               </div>
               <div className="scroll-reveal" style={{ animationDelay: "0.4s" }}>
-                <div className="text-2xl font-bold text-cyan-400">2+</div>
-                <p className="text-sm text-slate-400">Years Experience</p>
+                <div className="text-2xl font-bold text-teal-300">2+</div>
+                <p className="text-sm text-slate-500">Years Experience</p>
               </div>
               <div className="scroll-reveal" style={{ animationDelay: "0.5s" }}>
-                <div className="text-2xl font-bold text-cyan-400">99%</div>
-                <p className="text-sm text-slate-400">Client Satisfaction</p>
+                <div className="text-2xl font-bold text-teal-300">99%</div>
+                <p className="text-sm text-slate-500">Client Satisfaction</p>
               </div>
             </div>
           </div>
 
           {/* Right Content - Profile Image */}
-          <div ref={profileRef} className="relative h-[500px] md:h-[600px] will-change-transform">
-            {/* Outer glow layer */}
-            <div className="parallax-float absolute -inset-6 rounded-3xl bg-gradient-to-br from-cyan-500/30 via-blue-500/20 to-transparent blur-2xl" />
+          <div className="relative h-[500px] md:h-[600px]">
+            <div className="parallax-float absolute -inset-6 rounded-3xl bg-gradient-to-br from-teal-500/20 via-slate-500/10 to-amber-500/10 blur-2xl" />
+            <div className="absolute -inset-4 border border-teal-500/20 bg-gradient-to-br from-teal-500/5 to-slate-500/5 backdrop-blur-md mx-0 rounded-xl my-1" />
+            <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-slate-800/50 via-slate-700/30 to-slate-800/40 backdrop-blur-lg" />
 
-            {/* Outer frost layer */}
-            <div className="absolute -inset-4 border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 backdrop-blur-md mx-0 rounded-xl my-1" />
-
-            {/* Middle sandwich layer */}
-            <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-slate-800/50 via-cyan-900/30 to-blue-900/40 backdrop-blur-lg" />
-
-            {/* Main image container with enhanced glass effect */}
-            <div className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-cyan-400/40 bg-gradient-to-br from-cyan-500/25 via-slate-800/50 to-blue-600/25 backdrop-blur-xl shadow-2xl shadow-cyan-500/30">
-              {/* Multi-layer shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-white/5 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-teal-500/30 bg-gradient-to-br from-teal-500/10 via-slate-800/50 to-amber-500/5 backdrop-blur-xl shadow-2xl shadow-teal-500/10">
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-amber-500/5 to-transparent pointer-events-none" />
 
               <Image
                 src="/images/design-mode/1000041629.png.jpeg"

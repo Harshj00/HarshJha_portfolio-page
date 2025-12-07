@@ -44,12 +44,12 @@ export function AboutMe() {
 
   return (
     <section
-      className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-background border-b border-border"
+      className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-slate-950 border-b border-slate-800"
       id="about-me"
       ref={containerRef}
     >
       <div className="absolute inset-0 overflow-hidden">
-        <div className="parallax-float absolute top-0 left-1/2 w-1/2 h-1/2 bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent rounded-full blur-3xl -translate-x-1/2" />
+        <div className="parallax-float absolute top-0 left-1/2 w-1/2 h-1/2 bg-gradient-to-br from-teal-500/5 via-transparent to-transparent rounded-full blur-3xl -translate-x-1/2" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -58,12 +58,12 @@ export function AboutMe() {
           <div className="space-y-6" data-animate>
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                About <span className="text-primary">Me</span>
+                About <span className="text-teal-400">Me</span>
               </h2>
-              <div className="h-1 w-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" />
+              <div className="h-1 w-20 bg-gradient-to-r from-teal-500 to-amber-500 rounded-full" />
             </div>
 
-            <p className="text-muted-foreground leading-relaxed text-lg">
+            <p className="text-slate-400 leading-relaxed text-lg">
               I am an Aspiring Software Developer pursuing B.Tech in Computer Science and Engineering at K.R. Mangalam
               University. Experienced in software development with hands-on skills in Java, Python, data structures, and
               software testing. Specialized in AI/ML and Generative AI with focus on Large Language Models
@@ -71,23 +71,23 @@ export function AboutMe() {
               solutions.Committed to continuous learning and collaboration in fast-paced environments.
             </p>
 
-            <p className="text-muted-foreground leading-relaxed text-lg">
+            <p className="text-slate-400 leading-relaxed text-lg">
               I bring hands-on experience in software development, Multi-Cloud, Generative-Ai & data structures.
             </p>
 
             <div className="space-y-4 pt-4">
-              <h3 className="text-xl font-semibold text-foreground">Specializations</h3>
-              <ul className="space-y-2 text-muted-foreground">
+              <h3 className="text-xl font-semibold text-slate-100">Specializations</h3>
+              <ul className="space-y-2 text-slate-400">
                 <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">►</span>
+                  <span className="text-teal-400 mt-1">►</span>
                   <span>AI/ML and Generative AI with focus on LLMs</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">►</span>
+                  <span className="text-teal-400 mt-1">►</span>
                   <span>Full-stack Software Developer</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">►</span>
+                  <span className="text-teal-400 mt-1">►</span>
                   <span>Data analysis and visualization</span>
                 </li>
               </ul>
@@ -96,13 +96,13 @@ export function AboutMe() {
 
           {/* Skills section */}
           <div className="space-y-6" data-animate>
-            <Card className="p-8 bg-primary/5 border-primary/30 backdrop-blur-sm">
-              <h3 className="text-2xl font-bold mb-6 text-foreground">Technical Skills</h3>
+            <Card className="p-8 bg-slate-900/50 border-teal-500/20 backdrop-blur-sm">
+              <h3 className="text-2xl font-bold mb-6 text-slate-100">Technical Skills</h3>
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill, index) => (
                   <Badge
                     key={skill}
-                    className="scroll-reveal bg-primary/20 text-primary border border-primary/40 hover:bg-primary/30 px-4 py-2 text-sm cursor-default"
+                    className="scroll-reveal bg-teal-500/10 text-teal-200 border border-teal-500/30 hover:bg-teal-500/20 px-4 py-2 text-sm cursor-default"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     {skill}
@@ -111,18 +111,18 @@ export function AboutMe() {
               </div>
             </Card>
 
-            <Card className="p-8 bg-secondary/5 border-secondary/30 backdrop-blur-sm" data-animate>
-              <h3 className="text-2xl font-bold mb-4 text-foreground">Quick Facts</h3>
-              <div className="space-y-3 text-muted-foreground">
+            <Card className="p-8 bg-slate-900/50 border-amber-500/20 backdrop-blur-sm" data-animate>
+              <h3 className="text-2xl font-bold mb-4 text-slate-100">Quick Facts</h3>
+              <div className="space-y-3 text-slate-400">
                 <p>
-                  <span className="font-semibold text-foreground">Location:</span> West Delhi, Delhi - 110059
+                  <span className="font-semibold text-slate-200">Location:</span> West Delhi, Delhi - 110059
                 </p>
                 <p>
-                  <span className="font-semibold text-foreground">Education:</span> B.Tech Computer Science &
-                  Engineering ²⁰²³⁻²⁰²⁷
+                  <span className="font-semibold text-slate-200">Education:</span> B.Tech Computer Science & Engineering
+                  ²⁰²³⁻²⁰²⁷
                 </p>
                 <p>
-                  <span className="font-semibold text-foreground">Certifications:</span>
+                  <span className="font-semibold text-slate-200">Certifications:</span>
                   <br />• Oracle Cloud Infrastructure Generative AI Professional <br /> • Oracle Cloud Infrastructure
                   Developer Professional
                   <br />• OCI Multi Cloud Architect Professional

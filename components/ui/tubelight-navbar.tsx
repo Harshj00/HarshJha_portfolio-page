@@ -20,7 +20,6 @@ interface NavBarProps {
 export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
-
   const clickLock = useRef(false)
 
   useEffect(() => {
@@ -34,20 +33,19 @@ export function NavBar({ items, className }: NavBarProps) {
   }, [])
 
   useEffect(() => {
-    const sectionIds = items
-      .map((item) => item.url.startsWith("#") ? item.url.substring(1) : null)
-      .filter(Boolean) as string[]
+    const anchorItems = items.filter((item) => item.url.startsWith("#"))
+    const sectionIds = anchorItems.map((item) => item.url.substring(1))
 
     const handleScroll = () => {
-      if (clickLock.current) return // <-- Prevent scroll spy during click
+      if (clickLock.current) return
 
       let currentSection = sectionIds[0]
 
       for (const id of sectionIds) {
         const el = document.getElementById(id)
         if (el) {
-          const top = el.getBoundingClientRect().top
-          if (top <= 150) {
+          const rect = el.getBoundingClientRect()
+          if (rect.top <= window.innerHeight / 2 && rect.bottom > 0) {
             currentSection = id
           }
         }
@@ -59,19 +57,20 @@ export function NavBar({ items, className }: NavBarProps) {
       }
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     handleScroll()
 
     return () => window.removeEventListener("scroll", handleScroll)
   }, [items, activeTab])
 
-  // Unlock scrollspy after click
-  const handleClick = (name: string) => {
-    setActiveTab(name)
-    clickLock.current = true
-    setTimeout(() => {
-      clickLock.current = false
-    }, 300) // 300ms prevents glitch
+  const handleClick = (item: NavItem) => {
+    if (item.url.startsWith("#")) {
+      setActiveTab(item.name)
+      clickLock.current = true
+      setTimeout(() => {
+        clickLock.current = false
+      }, 800) // Increased timeout for smoother scroll completion
+    }
   }
 
   return (
@@ -79,28 +78,35 @@ export function NavBar({ items, className }: NavBarProps) {
       className={cn(
         `fixed z-50 w-full flex justify-center
         ${isMobile ? "bottom-3" : "top-4"}`,
-        className
+        className,
       )}
     >
       <div
-        className="flex items-center gap-1 bg-background/60 border border-border 
-                   backdrop-blur-xl px-3 py-2 rounded-full shadow-lg"
+        className="flex items-center gap-1 
+                   bg-black/40 backdrop-blur-xl backdrop-saturate-150
+                   border border-[#4A70A9]/20 
+                   px-3 py-2 rounded-full 
+                   shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)]"
       >
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
+          const isExternal = !item.url.startsWith("#")
 
           return (
             <Link
               key={item.name}
               href={item.url}
-              onClick={() => handleClick(item.name)}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              onClick={() => handleClick(item)}
               className={cn(
-                `relative cursor-pointer font-medium rounded-full transition-colors flex 
-                ${isMobile ? "p-3" : "px-6 py-2"} 
+                `relative cursor-pointer font-medium rounded-full transition-all duration-300 flex 
+                ${isMobile ? "p-3" : "px-5 py-2"} 
                  items-center gap-2 text-sm select-none`,
-                "text-foreground/80 hover:text-primary",
-                isActive && "text-primary"
+                isActive
+                  ? "text-[#EFECE3] bg-[#4A70A9]/15"
+                  : "text-[#EFECE3]/50 hover:text-[#EFECE3] hover:bg-[#4A70A9]/10",
               )}
             >
               <span className="hidden md:inline">{item.name}</span>
@@ -111,12 +117,12 @@ export function NavBar({ items, className }: NavBarProps) {
 
               {isActive && (
                 <motion.div
-                  layoutId="active-background"
-                  className="absolute inset-0 w-full bg-primary/10 rounded-full -z-10"
+                  layoutId="active-dot"
+                  className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#8FABD4] rounded-full"
                   transition={{
                     type: "spring",
-                    stiffness: 300,
-                    damping: 25,
+                    stiffness: 500,
+                    damping: 35,
                   }}
                 />
               )}

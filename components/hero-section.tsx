@@ -4,11 +4,34 @@ import Image from "next/image"
 import { Spotlight } from "@/components/ui/spotlight"
 import { Button } from "@/components/ui/button"
 import { ArrowRightCircleIcon, ArrowDownFromLineIcon } from "lucide-react"
+import { RevolvingElement } from "@/components/ui/revolving-element"
 
 export function HeroSection() {
   return (
     <section className="relative w-full min-h-screen bg-black overflow-hidden flex items-center">
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#4A70A9" />
+
+      <RevolvingElement
+        className="-top-32 -right-32 md:-top-48 md:-right-48"
+        size={500}
+        duration={25}
+        color="#4A70A9"
+        opacity={0.12}
+      />
+      <RevolvingElement
+        className="-bottom-40 -left-40 md:-bottom-60 md:-left-60"
+        size={600}
+        duration={30}
+        color="#8FABD4"
+        opacity={0.08}
+      />
+      <RevolvingElement
+        className="top-1/4 -left-20 hidden md:block"
+        size={200}
+        duration={15}
+        color="#EFECE3"
+        opacity={0.06}
+      />
 
       <div className="absolute inset-0 overflow-hidden">
         <div className="parallax-float absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-[#4A70A9]/10 via-transparent to-transparent rounded-full blur-3xl" />

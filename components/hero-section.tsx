@@ -5,8 +5,26 @@ import { Spotlight } from "@/components/ui/spotlight"
 import { Button } from "@/components/ui/button"
 import { ArrowRightCircleIcon, ArrowDownFromLineIcon } from "lucide-react"
 import { RevolvingElement } from "@/components/ui/revolving-element"
+import { useState, useEffect } from "react"
 
 export function HeroSection() {
+  const [displayText, setDisplayText] = useState("")
+  const [isTyping, setIsTyping] = useState(true)
+  const fullText = "Hello I am Harsh Kumar Jha"
+
+  useEffect(() => {
+    if (isTyping) {
+      if (displayText.length < fullText.length) {
+        const timeout = setTimeout(() => {
+          setDisplayText(fullText.slice(0, displayText.length + 1))
+        }, 80) // typing speed
+        return () => clearTimeout(timeout)
+      } else {
+        setIsTyping(false)
+      }
+    }
+  }, [displayText, isTyping])
+
   return (
     <section className="relative w-full min-h-screen bg-black overflow-hidden flex items-center">
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#4A70A9" />
@@ -46,9 +64,12 @@ export function HeroSection() {
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-8">
             <div className="space-y-4">
-              <div className="scroll-reveal inline-flex items-center gap-2 py-1 rounded-full bg-[#4A70A9]/15 border border-[#4A70A9]/40 w-fit px-3 border-sky-600">
+              <div className="scroll-reveal inline-flex items-center gap-2 py-1 rounded-full bg-[#4A70A9]/15 border border-[#4A70A9]/40 w-fit px-3">
                 <div className="w-2 h-2 rounded-full bg-[#8FABD4] animate-pulse" />
-                <span className="text-sm font-medium text-[#EFECE3]">Hello I am Harsh Kumar Jha </span>
+                <span className="text-sm font-medium text-[#EFECE3]">
+                  {displayText}
+                  {isTyping && <span className="inline-block w-[2px] h-4 bg-[#8FABD4] ml-1 animate-pulse" />}
+                </span>
               </div>
               <h1
                 className="scroll-reveal text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"

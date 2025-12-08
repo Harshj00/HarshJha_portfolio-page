@@ -46,7 +46,7 @@ export function HeroSection() {
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-8">
             <div className="space-y-4">
-              <div className="scroll-reveal inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4A70A9]/15 border border-[#4A70A9]/40 w-fit">
+              <div className="scroll-reveal inline-flex items-center gap-2 py-1 rounded-full bg-[#4A70A9]/15 border border-[#4A70A9]/40 w-fit px-3 border-sky-600">
                 <div className="w-2 h-2 rounded-full bg-[#8FABD4] animate-pulse" />
                 <span className="text-sm font-medium text-[#EFECE3]">Hello I am Harsh Kumar Jha </span>
               </div>
@@ -54,7 +54,7 @@ export function HeroSection() {
                 className="scroll-reveal text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
                 style={{ animationDelay: "0.1s" }}
               >
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#EFECE3] via-[#8FABD4] to-[#EFECE3]">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#EFECE3] via-[#8FABD4] to-[#EFECE3] font-extrabold">
                   Software Developer
                 </span>
               </h1>

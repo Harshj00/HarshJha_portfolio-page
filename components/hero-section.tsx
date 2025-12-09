@@ -17,7 +17,7 @@ export function HeroSection() {
       if (displayText.length < fullText.length) {
         const timeout = setTimeout(() => {
           setDisplayText(fullText.slice(0, displayText.length + 1))
-        }, 80) // typing speed
+        }, 100) // typing speed
         return () => clearTimeout(timeout)
       } else {
         setIsTyping(false)

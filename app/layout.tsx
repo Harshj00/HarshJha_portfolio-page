@@ -9,7 +9,7 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Portfolio Website",
+  title: "Harsh Jha's Website",
   description: "Harsh Jha's Portfolio Website",
   generator: "Google.app",
   icons: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         type: "image/svg+xml",
       },
     ],
-    apple:"/apple-icon.png"
+    apple:"/apple-icon.png",
   },
 }
 

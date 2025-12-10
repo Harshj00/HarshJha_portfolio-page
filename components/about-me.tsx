@@ -76,7 +76,7 @@ export function AboutMe() {
             </p>
 
             <div className="space-y-4 pt-4">
-              <h3 className="text-xl font-semibold text-[#EFECE3]">Specializations</h3>
+              <h3 className="text-xl font-semibold text-[#EFECE3] text-blue-200">Specializations</h3>
               <ul className="space-y-2 text-[#EFECE3]/70">
                 <li className="flex items-start gap-3">
                   <span className="text-[#8FABD4] mt-1">►</span>

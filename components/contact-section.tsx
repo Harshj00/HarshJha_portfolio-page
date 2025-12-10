@@ -71,7 +71,7 @@ export function ContactSection() {
             </p>
             <a
               href="mailto:sendthose10bucks@gmail.com"
-              className="inline-block border-[#4A70A9]/50 hover:bg-[#4A70A9]/15 hover:border-[#8FABD4]/70 px-8 py-6 bg-transparent text-[#EFECE3] text-sm border rounded-full font-semibold transition-all duration-300 button-glide"
+              className="inline-block border-[#4A70A9]/50 hover:bg-[#4A70A9]/15 hover:border-[#8FABD4]/70 px-8 bg-transparent text-[#EFECE3] text-sm border rounded-full font-semibold transition-all duration-300 button-glide py-3.5"
             >
               Email : sendthose10bucks@gmail.com
             </a>

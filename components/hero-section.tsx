@@ -134,11 +134,11 @@ export function HeroSection() {
 
           {/* Right Content - Profile Image */}
           <div className="relative h-[500px] md:h-[600px]">
-            <div className="parallax-float absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#4A70A9]/20 via-[#8FABD4]/10 to-[#EFECE3]/5 blur-2xl" />
-            <div className="absolute -inset-4 border border-[#4A70A9]/25 bg-gradient-to-br from-[#4A70A9]/8 to-[#8FABD4]/5 backdrop-blur-md mx-0 rounded-xl my-1" />
-            <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-black/60 via-[#0a0a0a]/40 to-black/50 backdrop-blur-lg" />
+            <div className="parallax-float absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#4A70A9]/20 via-[#8FABD4]/10 to-[#EFECE3]/5 blur-2xl opacity-55" />
+            <div className="absolute -inset-4 border border-[#4A70A9]/25 bg-gradient-to-br from-[#4A70A9]/8 to-[#8FABD4]/5 backdrop-blur-md mx-0 rounded-xl my-1 opacity-0" />
+            <div className="absolute -inset-2 bg-gradient-to-br from-black/60 via-[#0a0a0a]/40 to-black/50 backdrop-blur-lg opacity-75 rounded-full" />
 
-            <div className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-[#4A70A9]/40 bg-gradient-to-br from-[#4A70A9]/10 via-black/60 to-[#8FABD4]/5 backdrop-blur-xl shadow-2xl shadow-[#4A70A9]/15">
+            <div className="absolute inset-0 overflow-hidden border-2 border-[#4A70A9]/40 bg-gradient-to-br from-[#4A70A9]/10 via-black/60 to-[#8FABD4]/5 backdrop-blur-xl shadow-2xl shadow-[#4A70A9]/15 rounded-full">
               <div className="absolute inset-0 bg-gradient-to-br from-[#4A70A9]/10 via-transparent to-transparent pointer-events-none" />
               <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-[#8FABD4]/5 to-transparent pointer-events-none" />
 
@@ -146,7 +146,7 @@ export function HeroSection() {
                 src="/profile.png"
                 alt="Harsh Kumar Jha - Software Developer"
                 fill
-                className="object-cover opacity-100 px-0 py-0 my-0 border-0 rounded-2xl mx-0"
+                className="object-cover px-0 py-0 my-0 border-0 mx-0 opacity-100 rounded-full"
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
               />

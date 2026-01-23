@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useReducedMotion } from "framer-motion"
 
 interface RevolvingElementProps {
   className?: string
@@ -17,6 +18,15 @@ export function RevolvingElement({
   color = "#4A70A9",
   opacity = 0.15,
 }: RevolvingElementProps) {
+  const shouldReduceMotion = useReducedMotion()
+
+  // Hide revolving elements on mobile to improve performance
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768
+
+  if (isMobile || shouldReduceMotion) {
+    return null
+  }
+
   return (
     <motion.div
       className={`absolute pointer-events-none ${className}`}
@@ -35,13 +45,11 @@ export function RevolvingElement({
         className="w-full h-full"
         style={{ opacity }}
       >
-        {/* Outer circle */}
         <circle cx="100" cy="100" r="95" stroke={color} strokeWidth="0.5" />
         <circle cx="100" cy="100" r="80" stroke={color} strokeWidth="0.5" />
         <circle cx="100" cy="100" r="60" stroke={color} strokeWidth="0.5" />
         <circle cx="100" cy="100" r="40" stroke={color} strokeWidth="0.5" />
 
-        {/* Radial lines */}
         {Array.from({ length: 12 }).map((_, i) => {
           const angle = (i * 30 * Math.PI) / 180
           const x1 = 100 + 40 * Math.cos(angle)
@@ -51,7 +59,6 @@ export function RevolvingElement({
           return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={color} strokeWidth="0.5" />
         })}
 
-        {/* Decorative dots at intersections */}
         {[40, 60, 80, 95].map((radius) =>
           Array.from({ length: 12 }).map((_, i) => {
             const angle = (i * 30 * Math.PI) / 180
@@ -61,7 +68,6 @@ export function RevolvingElement({
           }),
         )}
 
-        {/* Center decoration */}
         <circle cx="100" cy="100" r="5" fill={color} opacity={0.4} />
         <circle cx="100" cy="100" r="2" fill={color} opacity={0.8} />
       </svg>

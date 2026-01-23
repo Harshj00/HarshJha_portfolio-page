@@ -173,6 +173,12 @@
     }
   }
 
+  @media (max-width: 768px) {
+    .parallax-float {
+      animation: none !important;
+    }
+  }
+
   @keyframes slide-in-left {
     from {
       opacity: 0;
@@ -285,9 +291,27 @@
     }
   }
 
+  @media (max-width: 1024px) {
+    @keyframes glass-glow {
+      from {
+        box-shadow: 0 0 15px rgba(74, 112, 169, 0.2);
+      }
+      to {
+        box-shadow: 0 0 20px rgba(74, 112, 169, 0.25);
+      }
+    }
+  }
+
   .glass-profile {
     animation: glass-glow 4s ease-in-out infinite;
     backdrop-filter: blur(20px);
+  }
+
+  @media (max-width: 768px) {
+    .glass-profile {
+      backdrop-filter: blur(8px);
+      animation: none;
+    }
   }
 
   @keyframes spotlight {

@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import { motion } from "framer-motion"
 import { useReducedMotion } from "framer-motion"
 
@@ -19,11 +20,16 @@ export function RevolvingElement({
   opacity = 0.15,
 }: RevolvingElementProps) {
   const shouldReduceMotion = useReducedMotion()
+  const [isMounted, setIsMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   // Hide revolving elements on mobile to improve performance
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768
 
-  if (isMobile || shouldReduceMotion) {
+  if (!isMounted || isMobile || shouldReduceMotion) {
     return null
   }
 

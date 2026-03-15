@@ -119,43 +119,24 @@ export function HeroSection() {
           </div>
 
           {/* Right Content - Profile Image */}
-          <div className="relative flex justify-center items-center">
-            {/* Mobile: 280px, Tablet: 380px, Desktop: 450px */}
-            <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px]">
-              {/* Outer glow effect */}
-              <div className="parallax-float absolute -inset-4 sm:-inset-6 rounded-3xl bg-gradient-to-br from-[#4A70A9]/25 via-[#8FABD4]/15 to-[#EFECE3]/8 blur-3xl opacity-60" />
-              
-              {/* Multiple animated border layers for modern look */}
-              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#4A70A9]/20 via-transparent to-[#8FABD4]/10 border border-[#4A70A9]/30 shadow-2xl shadow-[#4A70A9]/20" />
-              
-              {/* Inner accent border */}
-              <div className="absolute inset-1 sm:inset-2 rounded-2xl sm:rounded-3xl border border-[#8FABD4]/20 pointer-events-none" />
-              
-              {/* Decorative corner accents */}
-              <div className="absolute top-0 left-0 w-12 h-12 sm:w-16 sm:h-16 border-t border-l border-[#4A70A9]/50 rounded-tl-2xl sm:rounded-tl-3xl" />
-              <div className="absolute bottom-0 right-0 w-12 h-12 sm:w-16 sm:h-16 border-b border-r border-[#4A70A9]/50 rounded-br-2xl sm:rounded-br-3xl" />
+          <div className="relative h-[500px] md:h-[600px]">
+            <div className="parallax-float absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#4A70A9]/20 via-[#8FABD4]/10 to-[#EFECE3]/5 blur-2xl opacity-55" />
+            <div className="absolute -inset-4 border border-[#4A70A9]/25 bg-gradient-to-br from-[#4A70A9]/8 to-[#8FABD4]/5 backdrop-blur-md mx-0 rounded-xl my-1 opacity-0" />
+            <div className="absolute -inset-2 bg-gradient-to-br from-black/60 via-[#0a0a0a]/40 to-black/50 backdrop-blur-lg opacity-75 rounded-full" />
 
-              {/* Main image container */}
-              <div className="absolute inset-0 overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#4A70A9]/5 via-black/40 to-[#8FABD4]/5 backdrop-blur-sm">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#4A70A9]/8 via-transparent to-transparent pointer-events-none" />
-                
-                <Image
-                  src="/profile.png"
-                  alt="Harsh Kumar Jha - Software Developer"
-                  fill
-                  className="object-cover object-center rounded-2xl sm:rounded-3xl"
-                  priority
-                  sizes="(max-width: 640px) 288px, (max-width: 1024px) 384px, 450px"
-                />
-              </div>
+            <div className="absolute inset-0 overflow-hidden border-2 border-[#4A70A9]/40 bg-gradient-to-br from-[#4A70A9]/10 via-black/60 to-[#8FABD4]/5 backdrop-blur-xl shadow-2xl shadow-[#4A70A9]/15 rounded-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#4A70A9]/10 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-[#8FABD4]/5 to-transparent pointer-events-none" />
 
-              {/* Subtle shine effect on top */}
-              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-white/5 via-transparent to-transparent pointer-events-none" />
+              <Image
+                src="/profile.png"
+                alt="Harsh Kumar Jha - Software Developer"
+                fill
+                className="object-cover px-0 py-0 my-0 border-0 mx-0 opacity-100 rounded-full"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
-
-            {/* Floating accent element - visible on larger screens */}
-            <div className="hidden lg:block absolute -bottom-8 -right-8 w-24 h-24 border border-[#4A70A9]/20 rounded-full bg-gradient-to-br from-[#4A70A9]/10 to-transparent blur-sm" />
-            <div className="hidden lg:block absolute -top-8 -left-8 w-20 h-20 border border-[#8FABD4]/15 rounded-full bg-gradient-to-br from-[#8FABD4]/5 to-transparent blur-sm" />
           </div>
         </div>
       </div>

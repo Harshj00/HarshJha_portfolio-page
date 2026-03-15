@@ -119,7 +119,7 @@ export function HeroSection() {
           </div>
 
           {/* Right Content - Profile Image */}
-          <div className="relative h-[500px] md:h-[600px]">
+          <div className="relative aspect-square w-full max-w-md mx-auto">
             <div className="parallax-float absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#4A70A9]/20 via-[#8FABD4]/10 to-[#EFECE3]/5 blur-2xl opacity-55" />
             <div className="absolute -inset-4 border border-[#4A70A9]/25 bg-gradient-to-br from-[#4A70A9]/8 to-[#8FABD4]/5 backdrop-blur-md mx-0 rounded-xl my-1 opacity-0" />
             <div className="absolute -inset-2 bg-gradient-to-br from-black/60 via-[#0a0a0a]/40 to-black/50 backdrop-blur-lg opacity-75 rounded-full" />
@@ -132,9 +132,9 @@ export function HeroSection() {
                 src="/profile.png"
                 alt="Harsh Kumar Jha - Software Developer"
                 fill
-                className="object-cover px-0 py-0 my-0 border-0 mx-0 opacity-100 rounded-full"
+                className="object-cover rounded-full"
                 priority
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
               />
             </div>
           </div>

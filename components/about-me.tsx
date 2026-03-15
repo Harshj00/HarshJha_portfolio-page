@@ -38,7 +38,6 @@ export function AboutMe() {
     "TypeScript",
     "Data Structures",
     "Machine Learning",
-    "SQL",
     "MultiCloud",
   ]
 

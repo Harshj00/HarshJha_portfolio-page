@@ -1,4 +1,3 @@
-```tsx
 "use client"
 
 import Image from "next/image"
@@ -18,7 +17,7 @@ export function HeroSection() {
       if (displayText.length < fullText.length) {
         const timeout = setTimeout(() => {
           setDisplayText(fullText.slice(0, displayText.length + 1))
-        }, 100)
+        }, 100) // typing speed
         return () => clearTimeout(timeout)
       } else {
         setIsTyping(false)
@@ -48,7 +47,6 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-8">
             <div className="space-y-4">
@@ -59,7 +57,6 @@ export function HeroSection() {
                   {isTyping && <span className="inline-block w-[2px] h-4 bg-[#8FABD4] ml-1 animate-pulse" />}
                 </span>
               </div>
-
               <h1
                 className="scroll-reveal text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
                 style={{ animationDelay: "0.1s" }}
@@ -68,7 +65,6 @@ export function HeroSection() {
                   Software Developer
                 </span>
               </h1>
-
               <p
                 className="scroll-reveal text-lg md:text-xl text-[#EFECE3]/70 max-w-lg leading-relaxed text-left"
                 style={{ animationDelay: "0.2s" }}
@@ -94,7 +90,6 @@ export function HeroSection() {
                   <ArrowRightCircleIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
               </Button>
-
               <Button
                 asChild
                 variant="outline"
@@ -112,12 +107,10 @@ export function HeroSection() {
                 <div className="text-2xl font-bold text-[#8FABD4]">15+</div>
                 <p className="text-sm text-[#EFECE3]/50">Projects Completed</p>
               </div>
-
               <div className="scroll-reveal" style={{ animationDelay: "0.4s" }}>
                 <div className="text-2xl font-bold text-[#8FABD4]">2+</div>
                 <p className="text-sm text-[#EFECE3]/50">Years Experience</p>
               </div>
-
               <div className="scroll-reveal" style={{ animationDelay: "0.5s" }}>
                 <div className="text-2xl font-bold text-[#8FABD4]">99%</div>
                 <p className="text-sm text-[#EFECE3]/50">Client Satisfaction</p>
@@ -127,36 +120,40 @@ export function HeroSection() {
 
           {/* Right Content - Profile Image */}
           <div className="relative flex justify-center items-center">
+            {/* Mobile: 280px, Tablet: 380px, Desktop: 450px */}
+            <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px]">
+              {/* Outer glow effect */}
+              <div className="parallax-float absolute -inset-4 sm:-inset-6 rounded-3xl bg-gradient-to-br from-[#4A70A9]/25 via-[#8FABD4]/15 to-[#EFECE3]/8 blur-3xl opacity-60" />
+              
+              {/* Multiple animated border layers for modern look */}
+              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#4A70A9]/20 via-transparent to-[#8FABD4]/10 border border-[#4A70A9]/30 shadow-2xl shadow-[#4A70A9]/20" />
+              
+              {/* Inner accent border */}
+              <div className="absolute inset-1 sm:inset-2 rounded-2xl sm:rounded-3xl border border-[#8FABD4]/20 pointer-events-none" />
+              
+              {/* Decorative corner accents */}
+              <div className="absolute top-0 left-0 w-12 h-12 sm:w-16 sm:h-16 border-t border-l border-[#4A70A9]/50 rounded-tl-2xl sm:rounded-tl-3xl" />
+              <div className="absolute bottom-0 right-0 w-12 h-12 sm:w-16 sm:h-16 border-b border-r border-[#4A70A9]/50 rounded-br-2xl sm:rounded-br-3xl" />
 
-            <div className="relative w-72 h-80 sm:w-96 sm:h-[420px] lg:w-[450px] lg:h-[500px]">
-
-              {/* Glow */}
-              <div className="parallax-float absolute -inset-6 rounded-[45%] bg-gradient-to-br from-[#4A70A9]/25 via-[#8FABD4]/15 to-[#EFECE3]/8 blur-3xl opacity-60" />
-
-              {/* Outer border */}
-              <div className="absolute inset-0 rounded-[45%] bg-gradient-to-br from-[#4A70A9]/20 via-transparent to-[#8FABD4]/10 border border-[#4A70A9]/30 shadow-2xl shadow-[#4A70A9]/20" />
-
-              {/* Inner border */}
-              <div className="absolute inset-2 rounded-[45%] border border-[#8FABD4]/20 pointer-events-none" />
-
-              {/* Image container */}
-              <div className="absolute inset-0 overflow-hidden rounded-[45%] bg-gradient-to-br from-[#4A70A9]/5 via-black/40 to-[#8FABD4]/5 backdrop-blur-sm">
+              {/* Main image container */}
+              <div className="absolute inset-0 overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#4A70A9]/5 via-black/40 to-[#8FABD4]/5 backdrop-blur-sm">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#4A70A9]/8 via-transparent to-transparent pointer-events-none" />
-
+                
                 <Image
                   src="/profile.png"
                   alt="Harsh Kumar Jha - Software Developer"
                   fill
+                  className="object-cover object-center rounded-2xl sm:rounded-3xl"
                   priority
                   sizes="(max-width: 640px) 288px, (max-width: 1024px) 384px, 450px"
-                  className="object-cover object-center rounded-[45%] transition-transform duration-700 hover:scale-105"
                 />
               </div>
 
-              {/* Shine */}
-              <div className="absolute inset-0 rounded-[45%] bg-gradient-to-b from-white/5 via-transparent to-transparent pointer-events-none" />
+              {/* Subtle shine effect on top */}
+              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-white/5 via-transparent to-transparent pointer-events-none" />
             </div>
 
+            {/* Floating accent element - visible on larger screens */}
             <div className="hidden lg:block absolute -bottom-8 -right-8 w-24 h-24 border border-[#4A70A9]/20 rounded-full bg-gradient-to-br from-[#4A70A9]/10 to-transparent blur-sm" />
             <div className="hidden lg:block absolute -top-8 -left-8 w-20 h-20 border border-[#8FABD4]/15 rounded-full bg-gradient-to-br from-[#8FABD4]/5 to-transparent blur-sm" />
           </div>
@@ -165,4 +162,3 @@ export function HeroSection() {
     </section>
   )
 }
-

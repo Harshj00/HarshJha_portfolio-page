@@ -9,31 +9,33 @@ import { StaggeredText } from "@/components/ui/staggered-text"
 const projects = [
   {
     id: 1,
+    title: "ConsultCA",
+    description:
+      "An AI-powered legal and financial advisory platform that automates complex chartered accountancy workflows, resolves tax queries instantly, and simplifies compliance checks.",
+    tags: ["React", "Tailwind CSS", "OpenAI API", "Supabase", "AI Integration"],
+    link: "http://consultca.lovable.app/",
+  },
+  {
+    id: 2,
+    title: "HarshTrains",
+    description:
+      "AI-enabled fitness coaching application that runs on a standard browser & Android Phone and uses computer-vision-based pose estimation to track the user's movement during selected exercises.",
+    tags: ["JavaScript", "HTML5", "CSS3", "REST APIs", "Mobile Optimized", "Deeptech & System Based"],
+    link: "https://harshtrains.netlify.app/",
+  },
+  {
+    id: 3,
     title: "GreenHouse Gas Emission Prediction Model",
     description:
       "Predict Future GHG Emission Based on Historical Data. Used Machine Learning Models: Linear Regression, Random Forest to Identify Trends And Patterns in GHG.",
     tags: ["Python 3.10+", "Pandas", "Numpy", "Scikit-Learn", "Jupyter", "Matplotlib", "Git/Github"],
   },
   {
-    id: 2,
+    id: 4,
     title: "House Price Prediction Model",
     description:
       "A Machine Learning Model For Predicting House Prices Accurately Based On Various Features Like Location, Size, And Amenities Using Python.",
     tags: ["Python 3.X", "Numpy", "Matplotlib", "Seaborn", "Scikit Learn", "XG Boost"],
-  },
-  {
-    id: 3,
-    title: "Online Real-Time Auction System",
-    description:
-      "Built a full-stack, real-time auction system where users can list items for bidding and place bids on active auctions. This project is a step up from a basic e-commerce application because it introduces the complexities of real-time updates and managing high-frequency transactions.",
-    tags: ["Java", "Spring Boot", "PostgreSQL", "Maven or Gradle", "Docker"],
-  },
-  {
-    id: 4,
-    title: "Daily Planner with Reminders",
-    description:
-      "A single-page web application where a user can create, edit, and delete tasks. The application persists this data in a database, ensuring tasks are not lost when the browser is closed.",
-    tags: ["React", "JavaScript", "Java", "SpringBoot", "Git/Github"],
   },
 ]
 
@@ -58,11 +60,9 @@ export function FeaturedProjects() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {projects.map((project) => (
-            <InteractiveCard key={project.id} className="h-full">
-              <Card
-                className="group relative overflow-hidden bg-gradient-to-br from-[#4A70A9]/10 to-[#8FABD4]/5 border border-[#4A70A9]/30 bg-[#0a0a0a]/60 backdrop-blur-sm hover:border-[#8FABD4]/60 transition-all duration-300 cursor-pointer p-8 hover:shadow-xl hover:shadow-[#4A70A9]/20 hover:-translate-y-1 h-full"
-              >
+          {projects.map((project) => {
+            const CardContent = (
+              <>
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#4A70A9] to-[#8FABD4] opacity-60 group-hover:opacity-100 transition-all duration-300" />
 
                 <div className="relative z-10 space-y-4">
@@ -86,9 +86,29 @@ export function FeaturedProjects() {
                     ))}
                   </div>
                 </div>
+              </>
+            )
+
+            const cardElement = (
+              <Card
+                className="group relative overflow-hidden bg-gradient-to-br from-[#4A70A9]/10 to-[#8FABD4]/5 border border-[#4A70A9]/30 bg-[#0a0a0a]/60 backdrop-blur-sm hover:border-[#8FABD4]/60 transition-all duration-300 cursor-pointer p-8 hover:shadow-xl hover:shadow-[#4A70A9]/20 hover:-translate-y-1 h-full"
+              >
+                {CardContent}
               </Card>
-            </InteractiveCard>
-          ))}
+            )
+
+            return (
+              <InteractiveCard key={project.id} className="h-full">
+                {project.link ? (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+                    {cardElement}
+                  </a>
+                ) : (
+                  cardElement
+                )}
+              </InteractiveCard>
+            )
+          })}
         </div>
       </div>
     </section>

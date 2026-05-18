@@ -382,4 +382,13 @@
       scroll-behavior: smooth;
     }
   }
+
+  /* Hide v0 badge/watermark */
+  [class*="v0"],
+  [id*="v0"],
+  [data-v0],
+  .v0-badge,
+  .v0-watermark {
+    display: none !important;
+  }
 }

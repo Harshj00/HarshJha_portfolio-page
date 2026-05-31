@@ -81,7 +81,7 @@ export function HeroSection() {
                 className="border-[#4A70A9]/50 text-[#EFECE3] hover:bg-[#4A70A9]/15 hover:border-[#8FABD4]/70 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
               >
                 <a
-                  href="/HarshKumarJha-Resume.pdf"
+                  href="/Harsh_Kumar_Jha_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 group"

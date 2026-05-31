@@ -2,7 +2,6 @@ import { HeroSection } from "@/components/hero-section"
 import { AboutMe } from "@/components/about-me"
 import { FeaturedProjects } from "@/components/featured-projects"
 import { CertificationsSection } from "@/components/certifications-section"
-import { ResumeSection } from "@/components/resume-section"
 import { CTASection } from "@/components/cta-section"
 import { ContactSection } from "@/components/contact-section"
 import { RevolvingElement } from "@/components/ui/revolving-element"
@@ -26,9 +25,6 @@ export default function Home() {
       </section>
       <section id="certifications">
         <CertificationsSection />
-      </section>
-      <section id="resume">
-        <ResumeSection />
       </section>
       <CTASection />
       <section id="contact">

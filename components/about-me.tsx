@@ -64,15 +64,7 @@ export function AboutMe() {
             </div>
 
             <p className="text-[#EFECE3]/70 leading-relaxed text-lg">
-              I am an Aspiring Software Developer pursuing B.Tech in Computer Science and Engineering at K.R. Mangalam
-              University. Experienced in software development with hands-on skills in Java, Python, data structures, and
-              software testing. Specialized in AI/ML and Generative AI with focus on Large Language Models
-              (LLMs).Passionate about coding, problem-solving, and delivering high-quality, well-tested software
-              solutions.Committed to continuous learning and collaboration in fast-paced environments.
-            </p>
-
-            <p className="text-[#EFECE3]/70 leading-relaxed text-lg">
-              I bring hands-on experience in software development, Multi-Cloud, Generative-Ai & data structures.
+              Computer Science & Engineering student with hands-on experience in machine learning, cloud infrastructure, and web development. Proficient in Java, Python, and Spring Boot, skilled in ML frameworks including PyTorch and scikit-learn. Oracle Certified in Cloud Infrastructure — Generative AI, Developer, and Multi-Cloud Architect tracks. Strong foundation in Data Structures & Algorithms, Object-Oriented Programming, and System Design, with a focus on building scalable, production-quality software.
             </p>
 
             <div className="space-y-4 pt-4">

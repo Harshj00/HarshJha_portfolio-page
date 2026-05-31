@@ -81,7 +81,7 @@ export function HeroSection() {
                 className="border-[#4A70A9]/50 text-[#EFECE3] hover:bg-[#4A70A9]/15 hover:border-[#8FABD4]/70 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
               >
                 <a
-                  href="https://drive.google.com/file/d/1t8Dh0Fu0_PBZWoy775acHM0AP7rOkmHZ/view?usp=sharing"
+                  href="/Harsh_Kumar_Jha_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 group"
@@ -104,12 +104,12 @@ export function HeroSection() {
 
             <div className="grid grid-cols-3 gap-4 pt-8">
               <div className="scroll-reveal" style={{ animationDelay: "0.3s" }}>
-                <div className="text-2xl font-bold text-[#8FABD4]">5</div>
-                <p className="text-sm text-[#EFECE3]/50">GitHub Repos</p>
+                <div className="text-2xl font-bold text-[#8FABD4]">5+</div>
+                <p className="text-sm text-[#EFECE3]/50">Real World Projects</p>
               </div>
               <div className="scroll-reveal" style={{ animationDelay: "0.4s" }}>
-                <div className="text-2xl font-bold text-[#8FABD4]">3</div>
-                <p className="text-sm text-[#EFECE3]/50">Oracle Certs</p>
+                <div className="text-2xl font-bold text-[#8FABD4]">4</div>
+                <p className="text-sm text-[#EFECE3]/50">Professional Oracle Certifications</p>
               </div>
               <div className="scroll-reveal" style={{ animationDelay: "0.5s" }}>
                 <div className="text-2xl font-bold text-[#8FABD4]">2</div>

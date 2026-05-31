@@ -104,12 +104,12 @@ export function HeroSection() {
 
             <div className="grid grid-cols-3 gap-4 pt-8">
               <div className="scroll-reveal" style={{ animationDelay: "0.3s" }}>
-                <div className="text-2xl font-bold text-[#8FABD4]">5</div>
-                <p className="text-sm text-[#EFECE3]/50">GitHub Repos</p>
+                <div className="text-2xl font-bold text-[#8FABD4]">5+</div>
+                <p className="text-sm text-[#EFECE3]/50">Real World Projects</p>
               </div>
               <div className="scroll-reveal" style={{ animationDelay: "0.4s" }}>
-                <div className="text-2xl font-bold text-[#8FABD4]">3</div>
-                <p className="text-sm text-[#EFECE3]/50">Oracle Certs</p>
+                <div className="text-2xl font-bold text-[#8FABD4]">4</div>
+                <p className="text-sm text-[#EFECE3]/50">Professional Oracle Certifications</p>
               </div>
               <div className="scroll-reveal" style={{ animationDelay: "0.5s" }}>
                 <div className="text-2xl font-bold text-[#8FABD4]">2</div>

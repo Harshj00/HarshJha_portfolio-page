@@ -1,143 +1,262 @@
 "use client"
 
-import Image from "next/image"
-import { Spotlight } from "@/components/ui/spotlight"
-import { Button } from "@/components/ui/button"
-import { ArrowRightCircleIcon, ArrowDownFromLineIcon } from "lucide-react"
-import { RevolvingElement } from "@/components/ui/revolving-element"
 import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import { ArrowUpRight, X } from "lucide-react"
 
 export function HeroSection() {
-  const [displayText, setDisplayText] = useState("")
-  const [isTyping, setIsTyping] = useState(true)
-  const fullText = "Hello I am Harsh Kumar Jha"
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  useEffect(() => {
-    if (isTyping) {
-      if (displayText.length < fullText.length) {
-        const timeout = setTimeout(() => {
-          setDisplayText(fullText.slice(0, displayText.length + 1))
-        }, 100) // typing speed
-        return () => clearTimeout(timeout)
-      } else {
-        setIsTyping(false)
-      }
-    }
-  }, [displayText, isTyping])
+  const navLinks = ["Story", "Expertise", "Studios", "Feedback"]
+
+  const stats = [
+    { number: "300", label: "CRAFTED\nBRANDS" },
+    { number: "200", label: "DIGITAL\nPRODUCTS" },
+    { number: "100", label: "VENTURES\nFUNDED" },
+  ]
+
+  const fadeDownVariants = {
+    initial: { opacity: 0, y: -20 },
+    animate: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: custom * 0.1,
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    }),
+  }
+
+  const fadeUpVariants = {
+    initial: { opacity: 0, y: 32 },
+    animate: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: custom * 0.12,
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    }),
+  }
+
+  const headingVariants = {
+    initial: { y: "110%" },
+    animate: (custom: number) => ({
+      y: 0,
+      transition: {
+        delay: 0.4 + custom * 0.14,
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    }),
+  }
 
   return (
-    <section className="relative w-full min-h-screen bg-black overflow-hidden flex items-center">
-      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#4A70A9" />
+    <section className="relative w-full min-h-screen font-sans overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute inset-0 w-full h-full object-cover"
+        poster="/video-placeholder.jpg"
+      >
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260517_222138_3e3205be-3364-417b-a64a-bfe087acbec4.mp4" type="video/mp4" />
+      </video>
 
-      <RevolvingElement
-        className="-top-32 -right-32 md:-top-48 md:-right-48"
-        size={500}
-        duration={25}
-        color="#4A70A9"
-        opacity={0.12}
-      />
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/40" />
 
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="parallax-float absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-[#4A70A9]/10 via-transparent to-transparent rounded-full blur-3xl" />
-        <div
-          className="parallax-float absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-[#8FABD4]/8 via-transparent to-transparent rounded-full blur-3xl"
-          style={{ animationDelay: "0.5s" }}
-        />
-      </div>
+      {/* Content Wrapper */}
+      <div className="relative z-10 h-screen flex flex-col">
+        {/* Navigation */}
+        <nav className="flex items-center justify-between px-5 sm:px-8 md:px-12 pt-5 md:pt-6">
+          {/* Logo */}
+          <motion.div
+            className="flex items-center gap-2"
+            custom={0}
+            variants={fadeDownVariants}
+            initial="initial"
+            animate="animate"
+          >
+            <div className="w-8 h-8 rounded-full border-2 border-[#5E0ED7] flex items-center justify-center">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#5E0ED7]" />
+            </div>
+          </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Left Content */}
-          <div className="flex flex-col justify-center space-y-8">
-            <div className="space-y-4">
-              <div className="scroll-reveal inline-flex items-center gap-2 py-1 rounded-full bg-[#4A70A9]/15 border border-[#4A70A9]/40 w-fit px-3">
-                <div className="w-2 h-2 rounded-full bg-[#8FABD4] animate-pulse" />
-                <span className="text-sm font-medium text-[#EFECE3]">
-                  {displayText}
-                  {isTyping && <span className="inline-block w-[2px] h-4 bg-[#8FABD4] ml-1 animate-pulse" />}
-                </span>
+          {/* Nav Links - Hidden on Mobile */}
+          <div className="hidden md:flex gap-8">
+            {navLinks.map((link, idx) => (
+              <motion.a
+                key={link}
+                href="#"
+                className="text-sm font-semibold tracking-widest uppercase text-black hover:text-[#5E0ED7] transition-colors"
+                custom={idx + 1}
+                variants={fadeDownVariants}
+                initial="initial"
+                animate="animate"
+              >
+                {link}
+              </motion.a>
+            ))}
+          </div>
+
+          {/* Hamburger Menu - Visible on Mobile */}
+          <motion.button
+            onClick={() => setMobileMenuOpen(true)}
+            className="w-9 h-9 rounded-full bg-black flex flex-col items-center justify-center gap-1 md:hidden"
+            custom={5}
+            variants={fadeDownVariants}
+            initial="initial"
+            animate="animate"
+          >
+            <span className="w-4 h-0.5 bg-white" />
+            <span className="w-4 h-0.5 bg-white" />
+            <span className="w-4 h-0.5 bg-white" />
+          </motion.button>
+        </nav>
+
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <div className="fixed inset-0 z-50 bg-white p-5 sm:p-8 flex flex-col md:hidden">
+            {/* Header */}
+            <div className="flex items-center justify-between">
+              <div className="w-8 h-8 rounded-full border-2 border-[#5E0ED7] flex items-center justify-center">
+                <div className="w-2.5 h-2.5 rounded-full bg-[#5E0ED7]" />
               </div>
-              <h1
-                className="scroll-reveal text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
-                style={{ animationDelay: "0.1s" }}
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-9 h-9 rounded-full bg-black flex items-center justify-center"
               >
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#EFECE3] via-[#8FABD4] to-[#EFECE3] font-extrabold">
-                  Software Developer
-                </span>
-              </h1>
-              <p
-                className="scroll-reveal text-lg md:text-xl text-[#EFECE3]/70 max-w-lg leading-relaxed text-left"
-                style={{ animationDelay: "0.2s" }}
-              >
-                Crafting immersive digital experiences with cutting-edge technology | Java • Spring Boot • Generative AI
-                Professional & Oracle Multicloud Certified | Data Structures & Algorithms.
-              </p>
+                <X className="w-5 h-5 text-white" />
+              </button>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <Button
-                asChild
-                variant="outline"
-                className="border-[#4A70A9]/50 text-[#EFECE3] hover:bg-[#4A70A9]/15 hover:border-[#8FABD4]/70 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
-              >
+            {/* Menu Links */}
+            <div className="flex flex-col gap-8 mt-16">
+              {navLinks.map((link) => (
                 <a
-                  href="/Harsh_Kumar_Jha_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 group"
+                  key={link}
+                  href="#"
+                  className="text-3xl font-semibold tracking-widest uppercase text-black hover:text-[#5E0ED7] transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  Resume
-                  <ArrowRightCircleIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  {link}
                 </a>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border-[#4A70A9]/50 text-[#EFECE3] hover:bg-[#4A70A9]/15 hover:border-[#8FABD4]/70 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
+              ))}
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="mt-auto flex items-center gap-2 text-[#5E0ED7] text-xl font-semibold tracking-widest uppercase">
+              <a href="#">Work With Us</a>
+              <ArrowUpRight className="w-5 h-5" />
+            </div>
+          </div>
+        )}
+
+        {/* Stats Row - Middle Section */}
+        <div className="flex-1 flex items-center justify-end px-5 sm:px-8 md:px-12 py-8 md:py-0">
+          <div className="flex gap-5 sm:gap-8 md:gap-10 flex-wrap justify-end">
+            {stats.map((stat, idx) => (
+              <motion.div
+                key={stat.label}
+                className="text-right"
+                custom={idx + 2}
+                variants={fadeUpVariants}
+                initial="initial"
+                animate="animate"
               >
-                <a href="#about-me" className="inline-flex items-center gap-2 group">
-                  Let's Explore
-                  <ArrowDownFromLineIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </a>
-              </Button>
-            </div>
-
-            <div className="grid grid-cols-3 gap-4 pt-8">
-              <div className="scroll-reveal" style={{ animationDelay: "0.3s" }}>
-                <div className="text-2xl font-bold text-[#8FABD4]">5+</div>
-                <p className="text-sm text-[#EFECE3]/50">Real World Projects</p>
-              </div>
-              <div className="scroll-reveal" style={{ animationDelay: "0.4s" }}>
-                <div className="text-2xl font-bold text-[#8FABD4]">4</div>
-                <p className="text-sm text-[#EFECE3]/50">Professional Oracle Certifications</p>
-              </div>
-              <div className="scroll-reveal" style={{ animationDelay: "0.5s" }}>
-                <div className="text-2xl font-bold text-[#8FABD4]">2</div>
-                <p className="text-sm text-[#EFECE3]/50">Internships</p>
-              </div>
-            </div>
+                <div className="flex items-baseline justify-end gap-1">
+                  <span className="text-[#5E0ED7] font-semibold" style={{ fontSize: "clamp(0.75rem, 2.5vw, 1.75rem)" }}>
+                    +
+                  </span>
+                  <div style={{ fontSize: "clamp(1.5rem, 5vw, 3.5rem)" }} className="font-semibold text-black font-sans">
+                    {stat.number}
+                  </div>
+                </div>
+                <p
+                  className="text-black font-semibold tracking-widest uppercase whitespace-pre-line leading-tight"
+                  style={{ fontSize: "clamp(10px, 2vw, 14px)" }}
+                >
+                  {stat.label}
+                </p>
+              </motion.div>
+            ))}
           </div>
+        </div>
 
-          {/* Right Content - Profile Image */}
-          <div className="relative h-[500px] md:h-[600px]">
-            <div className="parallax-float absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#4A70A9]/20 via-[#8FABD4]/10 to-[#EFECE3]/5 blur-2xl opacity-55" />
-            <div className="absolute -inset-4 border border-[#4A70A9]/25 bg-gradient-to-br from-[#4A70A9]/8 to-[#8FABD4]/5 backdrop-blur-md mx-0 rounded-xl my-1 opacity-0" />
-            <div className="absolute -inset-2 bg-gradient-to-br from-black/60 via-[#0a0a0a]/40 to-black/50 backdrop-blur-lg opacity-75 rounded-full" />
+        {/* Bottom Section */}
+        <div className="px-5 sm:px-8 md:px-12 pb-8 md:pb-12 space-y-6 md:space-y-12">
+          {/* Row A: Tagline + CTA */}
+          <motion.div
+            className="flex items-center justify-between gap-4"
+            custom={5}
+            variants={fadeUpVariants}
+            initial="initial"
+            animate="animate"
+          >
+            <p
+              className="font-semibold tracking-widest uppercase text-black leading-tight"
+              style={{
+                fontSize: "clamp(10px, 1.5vw, 14px)",
+                maxWidth: "clamp(130px, 20vw, 400px)",
+              }}
+            >
+              Shaping Bold <br /> Visions Into Power <br /> For Your Tribe
+            </p>
+            <a
+              href="#"
+              className="flex items-center gap-2 text-[#5E0ED7] font-semibold tracking-widest uppercase whitespace-nowrap"
+              style={{ fontSize: "clamp(16px, 3vw, 24px)" }}
+            >
+              Work With Us
+              <ArrowUpRight className="w-5 sm:w-6 md:w-[22px]" />
+            </a>
+          </motion.div>
 
-            <div className="absolute inset-0 overflow-hidden border-2 border-[#4A70A9]/40 bg-gradient-to-br from-[#4A70A9]/10 via-black/60 to-[#8FABD4]/5 backdrop-blur-xl shadow-2xl shadow-[#4A70A9]/15 rounded-full">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#4A70A9]/10 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-[#8FABD4]/5 to-transparent pointer-events-none" />
-
-              <Image
-                src="/profile.png"
-                alt="Harsh Kumar Jha - Software Developer"
-                fill
-                className="object-cover px-0 py-0 my-0 border-0 mx-0 opacity-100 rounded-full"
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+          {/* Row B: Description + Heading */}
+          <motion.div
+            className="flex items-end justify-between gap-3 sm:gap-4"
+            custom={7}
+            variants={fadeUpVariants}
+            initial="initial"
+            animate="animate"
+          >
+            {/* Description */}
+            <div
+              className="shrink-0 font-semibold tracking-widest uppercase text-black leading-tight"
+              style={{
+                width: "clamp(120px, 25vw, 280px)",
+                fontSize: "clamp(9px, 1.2vw, 14px)",
+              }}
+            >
+              Creative Studios Built Around Elevating Your Vision Into Striking Reality
             </div>
-          </div>
+
+            {/* Main Heading */}
+            <div className="flex-1 text-right">
+              <div style={{ lineHeight: 0.88 }}>
+                {["FEARLESS", "VISION", "DELIVERED"].map((word, idx) => (
+                  <div key={word} className="overflow-hidden">
+                    <motion.h1
+                      className="font-semibold tracking-widest uppercase text-black font-sans"
+                      style={{
+                        fontSize: "clamp(2rem, 9vw, 9rem)",
+                      }}
+                      custom={idx}
+                      variants={headingVariants}
+                      initial="initial"
+                      animate="animate"
+                    >
+                      {word}
+                    </motion.h1>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

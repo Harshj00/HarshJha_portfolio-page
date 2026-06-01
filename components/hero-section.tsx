@@ -10,9 +10,9 @@ export function HeroSection() {
   const navLinks = ["Story", "Expertise", "Studios", "Feedback"]
 
   const stats = [
-    { number: "300", label: "CRAFTED\nBRANDS" },
-    { number: "200", label: "DIGITAL\nPRODUCTS" },
-    { number: "100", label: "VENTURES\nFUNDED" },
+    { number: "5+", label: "Real World\nProjects" },
+    { number: "4", label: "Professional\nCertifications" },
+    { number: "2", label: "Internships" },
   ]
 
   const fadeDownVariants = {

@@ -29,6 +29,7 @@ const projects = [
     description:
       "Predict Future GHG Emission Based on Historical Data. Used Machine Learning Models: Linear Regression, Random Forest to Identify Trends And Patterns in GHG.",
     tags: ["Python 3.10+", "Pandas", "Numpy", "Scikit-Learn", "Jupyter", "Matplotlib", "Git/Github"],
+    link: "https://github.com/Harshj00/AICTE.InternshipFinalWeek"
   },
   {
     id: 4,
@@ -36,6 +37,7 @@ const projects = [
     description:
       "A Machine Learning Model For Predicting House Prices Accurately Based On Various Features Like Location, Size, And Amenities Using Python.",
     tags: ["Python 3.X", "Numpy", "Matplotlib", "Seaborn", "Scikit Learn", "XG Boost"],
+    link: "https://github.com/Harshj00/PROJECTS/tree/main"
   },
 ]
 

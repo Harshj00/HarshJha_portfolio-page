@@ -187,6 +187,32 @@ export function HeroSection() {
           </div>
         </div>
 
+        {/* CTA Buttons Section */}
+        <motion.div
+          className="px-5 sm:px-8 md:px-12 pb-8 flex flex-wrap gap-4 items-center"
+          custom={4}
+          variants={fadeUpVariants}
+          initial="initial"
+          animate="animate"
+        >
+          <a
+            href="/Harsh_Kumar_Jha_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#5E0ED7] text-[#5E0ED7] font-semibold tracking-wide uppercase text-sm sm:text-base rounded-lg hover:bg-[#5E0ED7]/10 transition-all duration-300"
+          >
+            Resume
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
+          <a
+            href="#about-me"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#5E0ED7] text-[#5E0ED7] font-semibold tracking-wide uppercase text-sm sm:text-base rounded-lg hover:bg-[#5E0ED7]/10 transition-all duration-300"
+          >
+            Let&apos;s Explore
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
+        </motion.div>
+
         {/* Bottom Section */}
         <div className="px-5 sm:px-8 md:px-12 pb-8 md:pb-12 space-y-6 md:space-y-12">
           {/* Row A: Tagline + CTA */}

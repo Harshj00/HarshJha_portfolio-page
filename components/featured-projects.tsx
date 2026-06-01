@@ -44,19 +44,19 @@ const projects = [
 export function FeaturedProjects() {
   return (
     <section
-      className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0a0a0a] to-black"
+      className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50"
       id="projects"
     >
       <div className="absolute inset-0 overflow-hidden hidden md:block">
-        <div className="absolute top-1/2 right-0 w-1/2 h-1/2 bg-gradient-to-l from-[#4A70A9]/8 via-transparent to-transparent rounded-full blur-xl" />
+        <div className="absolute top-1/2 right-0 w-1/2 h-1/2 bg-gradient-to-l from-[#5E0ED7]/5 via-transparent to-transparent rounded-full blur-xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#EFECE3] via-[#8FABD4] to-[#EFECE3]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-black">
             Projects
           </h2>
-          <p className="text-lg text-[#EFECE3]/60 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Showcasing my Work in Full Stack, Machine Learning, Generative AI, Multicloud etc.
           </p>
         </div>
@@ -65,23 +65,23 @@ export function FeaturedProjects() {
           {projects.map((project) => {
             const CardContent = (
               <>
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#4A70A9] to-[#8FABD4] opacity-60 group-hover:opacity-100 transition-all duration-300" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#5E0ED7] to-[#a855f7] opacity-60 group-hover:opacity-100 transition-all duration-300" />
 
                 <div className="relative z-10 space-y-4">
                   <div className="flex items-start justify-between">
-                    <h3 className="text-2xl font-bold text-[#EFECE3] group-hover:text-[#8FABD4] transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-black group-hover:text-[#5E0ED7] transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <ChevronRight className="w-5 h-5 text-[#8FABD4] group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
+                    <ChevronRight className="w-5 h-5 text-[#5E0ED7] group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
                   </div>
 
-                  <p className="text-[#EFECE3]/60 leading-relaxed">{project.description}</p>
+                  <p className="text-gray-600 leading-relaxed">{project.description}</p>
 
                   <div className="flex flex-wrap gap-2 pt-4">
                     {project.tags.map((tag) => (
                       <Badge
                         key={tag}
-                        className="bg-[#4A70A9]/15 text-[#8FABD4] border border-[#4A70A9]/30 hover:bg-[#4A70A9]/25 hover:border-[#8FABD4]/50 transition-colors duration-300"
+                        className="bg-[#5E0ED7]/10 text-[#5E0ED7] border border-[#5E0ED7]/30 hover:bg-[#5E0ED7]/20 hover:border-[#5E0ED7]/60 transition-colors duration-300"
                       >
                         {tag}
                       </Badge>
@@ -93,7 +93,7 @@ export function FeaturedProjects() {
 
             const cardElement = (
               <Card
-                className="group relative overflow-hidden bg-gradient-to-br from-[#4A70A9]/10 to-[#8FABD4]/5 border border-[#4A70A9]/30 bg-[#0a0a0a]/60 backdrop-blur-sm hover:border-[#8FABD4]/60 transition-all duration-300 cursor-pointer p-8 hover:shadow-xl hover:shadow-[#4A70A9]/20 hover:-translate-y-1 h-full"
+                className="group relative overflow-hidden bg-white border border-gray-200 hover:border-[#5E0ED7] transition-all duration-300 cursor-pointer p-8 hover:shadow-lg hover:shadow-[#5E0ED7]/10 hover:-translate-y-1 h-full"
               >
                 {CardContent}
               </Card>

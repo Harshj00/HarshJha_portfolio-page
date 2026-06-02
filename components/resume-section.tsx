@@ -131,21 +131,21 @@ export function ResumeSection() {
           <div className="p-6 rounded-xl bg-gradient-to-br from-[#4A70A9]/10 to-[#8FABD4]/5 border border-[#4A70A9]/30 hover:border-[#8FABD4]/60 transition-all duration-300">
             <h3 className="text-lg font-bold text-[#8FABD4] mb-3">Professional Experience</h3>
             <p className="text-[#EFECE3]/70 text-sm leading-relaxed">
-              2 internships in ML and Web Development, with hands-on experience building production-grade software
+              AI/ML Intern at Edunet Foundation and Web Development Intern at TechOctanet, building full-stack AI systems and resolving production defects
             </p>
           </div>
 
           <div className="p-6 rounded-xl bg-gradient-to-br from-[#4A70A9]/10 to-[#8FABD4]/5 border border-[#4A70A9]/30 hover:border-[#8FABD4]/60 transition-all duration-300">
-            <h3 className="text-lg font-bold text-[#8FABD4] mb-3">Certifications</h3>
+            <h3 className="text-lg font-bold text-[#8FABD4] mb-3">Key Projects</h3>
             <p className="text-[#EFECE3]/70 text-sm leading-relaxed">
-              4 Oracle Cloud certifications across Generative AI, Developer, Multi-Cloud Architect, and Foundations
+              ConsultCA (AI Legal Platform) and HarshTrains (AI Fitness App) - reduced user workflow time by 60% with production-grade systems
             </p>
           </div>
 
           <div className="p-6 rounded-xl bg-gradient-to-br from-[#4A70A9]/10 to-[#8FABD4]/5 border border-[#4A70A9]/30 hover:border-[#8FABD4]/60 transition-all duration-300">
-            <h3 className="text-lg font-bold text-[#8FABD4] mb-3">Skills & Tools</h3>
+            <h3 className="text-lg font-bold text-[#8FABD4] mb-3">Certifications & Skills</h3>
             <p className="text-[#EFECE3]/70 text-sm leading-relaxed">
-              Java, Python, Spring Boot, PyTorch, scikit-learn, OCI, Docker, and full-stack development expertise
+              4 Oracle Cloud certifications, Java, Python, React, Spring Boot, PyTorch, and expertise in AI/ML, web development, and system design
             </p>
           </div>
         </motion.div>

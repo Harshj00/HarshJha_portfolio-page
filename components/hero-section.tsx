@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRightCircleIcon, ArrowDownFromLineIcon } from "lucide-react"
 import { RevolvingElement } from "@/components/ui/revolving-element"
 import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 
 export function HeroSection() {
   const [displayText, setDisplayText] = useState("")
@@ -50,72 +51,99 @@ export function HeroSection() {
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-8">
             <div className="space-y-4">
-              <div className="scroll-reveal inline-flex items-center gap-2 py-1 rounded-full bg-[#3b82f6]/10 border border-[#3b82f6]/30 w-fit px-3">
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-2 py-1 rounded-full bg-[#3b82f6]/10 border border-[#3b82f6]/30 w-fit px-3"
+              >
                 <div className="w-2 h-2 rounded-full bg-[#3b82f6] animate-pulse" />
                 <span className="text-sm font-medium text-[#f5f3f0]">
                   {displayText}
                   {isTyping && <span className="inline-block w-[2px] h-4 bg-[#3b82f6] ml-1 animate-pulse" />}
                 </span>
-              </div>
-              <h1
-                className="scroll-reveal text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
-                style={{ animationDelay: "0.1s" }}
+              </motion.div>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#f5f3f0] via-[#3b82f6] to-[#f5f3f0] font-extrabold">
                   Software Developer
                 </span>
-              </h1>
-              <p
-                className="scroll-reveal text-lg md:text-xl text-[#f5f3f0]/70 max-w-lg leading-relaxed text-left"
-                style={{ animationDelay: "0.2s" }}
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-lg md:text-xl text-[#f5f3f0]/70 max-w-lg leading-relaxed text-left"
               >
                 Crafting immersive digital experiences with cutting-edge technology | Java • Spring Boot • Generative AI
                 Professional & Oracle Multicloud Certified | Data Structures & Algorithms.
-              </p>
+              </motion.p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <Button
-                asChild
-                variant="outline"
-                className="border-[#3b82f6]/50 text-[#f5f3f0] hover:bg-[#3b82f6]/15 hover:border-[#3b82f6]/70 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-wrap gap-4"
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <a
-                  href="/HarshKumarJha-Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 group"
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-[#3b82f6]/50 text-[#f5f3f0] hover:bg-[#3b82f6]/15 hover:border-[#3b82f6]/70 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
                 >
-                  Resume
-                  <ArrowRightCircleIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </a>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border-[#3b82f6]/50 text-[#f5f3f0] hover:bg-[#3b82f6]/15 hover:border-[#3b82f6]/70 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
+                  <a
+                    href="/HarshKumarJha-Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 group"
+                  >
+                    Resume
+                    <ArrowRightCircleIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </a>
+                </Button>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <a href="#about-me" className="inline-flex items-center gap-2 group">
-                  Let's Explore
-                  <ArrowDownFromLineIcon className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
-                </a>
-              </Button>
-            </div>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-[#3b82f6]/50 text-[#f5f3f0] hover:bg-[#3b82f6]/15 hover:border-[#3b82f6]/70 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
+                >
+                  <a href="#about-me" className="inline-flex items-center gap-2 group">
+                    Let's Explore
+                    <ArrowDownFromLineIcon className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
+                  </a>
+                </Button>
+              </motion.div>
+            </motion.div>
 
-            <div className="grid grid-cols-3 gap-4 pt-8">
-              <div className="scroll-reveal" style={{ animationDelay: "0.3s" }}>
-                <div className="text-2xl font-bold text-[#3b82f6]">5+</div>
-                <p className="text-sm text-[#f5f3f0]/50">Real World Projects</p>
-              </div>
-              <div className="scroll-reveal" style={{ animationDelay: "0.4s" }}>
-                <div className="text-2xl font-bold text-[#3b82f6]">4</div>
-                <p className="text-sm text-[#f5f3f0]/50">Professional Oracle Certifications</p>
-              </div>
-              <div className="scroll-reveal" style={{ animationDelay: "0.5s" }}>
-                <div className="text-2xl font-bold text-[#3b82f6]">2</div>
-                <p className="text-sm text-[#f5f3f0]/50">Internships</p>
-              </div>
-            </div>
+            <motion.div className="grid grid-cols-3 gap-4 pt-8">
+              {[
+                { number: "5+", label: "Real World Projects" },
+                { number: "4", label: "Professional Oracle Certifications" },
+                { number: "2", label: "Internships" }
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                >
+                  <div className="text-2xl font-bold text-[#3b82f6] number-counter">{stat.number}</div>
+                  <p className="text-sm text-[#f5f3f0]/50">{stat.label}</p>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
 
           {/* Right Content - Profile Image */}

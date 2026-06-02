@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { ChevronRight } from "lucide-react"
 import { InteractiveCard } from "@/components/ui/interactive-card"
 import { StaggeredText } from "@/components/ui/staggered-text"
+import { motion } from "framer-motion"
 
 const projects = [
   {
@@ -52,20 +53,31 @@ export function FeaturedProjects() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="text-center mb-16 md:mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16 md:mb-20"
+        >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#f5f3f0] via-[#3b82f6] to-[#f5f3f0]">
             Projects
           </h2>
           <p className="text-lg text-[#f5f3f0]/60 max-w-2xl mx-auto">
             Showcasing my Work in Full Stack, Machine Learning, Generative AI, Multicloud etc.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {projects.map((project) => {
+        <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {projects.map((project, index) => {
             const CardContent = (
               <>
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#3b82f6] to-[#9d7f6f] opacity-60 group-hover:opacity-100 transition-all duration-300" />
+                
+                {/* Project Number Badge */}
+                <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-gradient-to-br from-[#3b82f6] to-[#6ba3ff] flex items-center justify-center text-white font-bold text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
 
                 <div className="relative z-10 space-y-4">
                   <div className="flex items-start justify-between">
@@ -92,11 +104,19 @@ export function FeaturedProjects() {
             )
 
             const cardElement = (
-              <Card
-                className="group relative overflow-hidden bg-gradient-to-br from-[#3b82f6]/8 to-[#9d7f6f]/5 border border-[#3b82f6]/30 bg-[#1a1f2e]/60 backdrop-blur-sm hover:border-[#3b82f6]/60 transition-all duration-300 cursor-pointer p-8 hover:shadow-xl hover:shadow-[#3b82f6]/15 hover:-translate-y-1 h-full"
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
               >
-                {CardContent}
-              </Card>
+                <Card
+                  className="group relative overflow-hidden bg-gradient-to-br from-[#3b82f6]/8 to-[#9d7f6f]/5 border border-[#3b82f6]/30 bg-[#1a1f2e]/60 backdrop-blur-sm hover:border-[#3b82f6]/60 transition-all duration-300 cursor-pointer p-8 hover:shadow-xl hover:shadow-[#3b82f6]/15 hover:-translate-y-1 h-full"
+                >
+                  {CardContent}
+                </Card>
+              </motion.div>
             )
 
             return (
@@ -111,7 +131,7 @@ export function FeaturedProjects() {
               </InteractiveCard>
             )
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

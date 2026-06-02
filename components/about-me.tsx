@@ -3,6 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useEffect, useRef } from "react"
+import { motion } from "framer-motion"
 
 export function AboutMe() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -53,21 +54,50 @@ export function AboutMe() {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center"
+        >
           {/* About content */}
           <div className="space-y-6" data-animate>
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#f5f3f0]">
                 About <span className="text-[#3b82f6]">Me</span>
               </h2>
-              <div className="h-1 w-20 bg-gradient-to-r from-[#3b82f6] to-[#9d7f6f] rounded-full" />
-            </div>
+              <motion.div 
+                initial={{ width: 0 }}
+                whileInView={{ width: 80 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="h-1 bg-gradient-to-r from-[#3b82f6] to-[#9d7f6f] rounded-full" 
+              />
+            </motion.div>
 
-            <p className="text-[#f5f3f0]/70 leading-relaxed text-lg">
+            <motion.p 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-[#f5f3f0]/70 leading-relaxed text-lg"
+            >
               Computer Science & Engineering student with hands-on experience in machine learning, cloud infrastructure, and web development. Proficient in Java, Python, and Spring Boot, skilled in ML frameworks including PyTorch and scikit-learn. Oracle Certified in Cloud Infrastructure — Generative AI, Developer, and Multi-Cloud Architect tracks. Strong foundation in Data Structures & Algorithms, Object-Oriented Programming, and System Design, with a focus on building scalable, production-quality software.
-            </p>
+            </motion.p>
 
-            <div className="space-y-4 pt-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="space-y-4 pt-4"
+            >
               <h3 className="text-xl font-semibold text-[#f5f3f0]">Specializations</h3>
               <ul className="space-y-2 text-[#f5f3f0]/70">
                 <li className="flex items-start gap-3">
@@ -83,11 +113,18 @@ export function AboutMe() {
                   <span>Data analysis and visualization</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
           </div>
 
           {/* Skills section - Updated cards to use consistent modern palette hover effects */}
-          <div className="space-y-6" data-animate>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-6" 
+            data-animate
+          >
             <Card className="p-8 bg-[#1a1f2e]/80 border-[#3b82f6]/30 backdrop-blur-sm hover:border-[#3b82f6]/60 hover:shadow-xl hover:shadow-[#3b82f6]/15 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-6 text-[#f5f3f0]">Technical Skills</h3>
               <div className="flex flex-wrap gap-3">
@@ -126,8 +163,8 @@ export function AboutMe() {
                 </p>
               </div>
             </Card>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

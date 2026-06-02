@@ -26,21 +26,21 @@ export function HeroSection() {
   }, [displayText, isTyping])
 
   return (
-    <section className="relative w-full min-h-screen bg-black overflow-hidden flex items-center">
-      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#4A70A9" />
+    <section className="relative w-full min-h-screen bg-gradient-to-b from-[#0f1419] via-[#151a28] to-[#0f1419] overflow-hidden flex items-center">
+      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#3b82f6" />
 
       <RevolvingElement
         className="-top-32 -right-32 md:-top-48 md:-right-48"
         size={500}
         duration={25}
-        color="#4A70A9"
-        opacity={0.12}
+        color="#3b82f6"
+        opacity={0.08}
       />
 
       <div className="absolute inset-0 overflow-hidden">
-        <div className="parallax-float absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-[#4A70A9]/10 via-transparent to-transparent rounded-full blur-3xl" />
+        <div className="parallax-float absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-[#3b82f6]/5 via-transparent to-transparent rounded-full blur-3xl" />
         <div
-          className="parallax-float absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-[#8FABD4]/8 via-transparent to-transparent rounded-full blur-3xl"
+          className="parallax-float absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-[#9d7f6f]/5 via-transparent to-transparent rounded-full blur-3xl"
           style={{ animationDelay: "0.5s" }}
         />
       </div>
@@ -50,23 +50,23 @@ export function HeroSection() {
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-8">
             <div className="space-y-4">
-              <div className="scroll-reveal inline-flex items-center gap-2 py-1 rounded-full bg-[#4A70A9]/15 border border-[#4A70A9]/40 w-fit px-3">
-                <div className="w-2 h-2 rounded-full bg-[#8FABD4] animate-pulse" />
-                <span className="text-sm font-medium text-[#EFECE3]">
+              <div className="scroll-reveal inline-flex items-center gap-2 py-1 rounded-full bg-[#3b82f6]/10 border border-[#3b82f6]/30 w-fit px-3">
+                <div className="w-2 h-2 rounded-full bg-[#3b82f6] animate-pulse" />
+                <span className="text-sm font-medium text-[#f5f3f0]">
                   {displayText}
-                  {isTyping && <span className="inline-block w-[2px] h-4 bg-[#8FABD4] ml-1 animate-pulse" />}
+                  {isTyping && <span className="inline-block w-[2px] h-4 bg-[#3b82f6] ml-1 animate-pulse" />}
                 </span>
               </div>
               <h1
                 className="scroll-reveal text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
                 style={{ animationDelay: "0.1s" }}
               >
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#EFECE3] via-[#8FABD4] to-[#EFECE3] font-extrabold">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#f5f3f0] via-[#3b82f6] to-[#f5f3f0] font-extrabold">
                   Software Developer
                 </span>
               </h1>
               <p
-                className="scroll-reveal text-lg md:text-xl text-[#EFECE3]/70 max-w-lg leading-relaxed text-left"
+                className="scroll-reveal text-lg md:text-xl text-[#f5f3f0]/70 max-w-lg leading-relaxed text-left"
                 style={{ animationDelay: "0.2s" }}
               >
                 Crafting immersive digital experiences with cutting-edge technology | Java • Spring Boot • Generative AI
@@ -78,10 +78,10 @@ export function HeroSection() {
               <Button
                 asChild
                 variant="outline"
-                className="border-[#4A70A9]/50 text-[#EFECE3] hover:bg-[#4A70A9]/15 hover:border-[#8FABD4]/70 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
+                className="border-[#3b82f6]/50 text-[#f5f3f0] hover:bg-[#3b82f6]/15 hover:border-[#3b82f6]/70 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
               >
                 <a
-                  href="/Harsh_Kumar_Jha_Resume.pdf"
+                  href="/HarshKumarJha-Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 group"
@@ -93,40 +93,40 @@ export function HeroSection() {
               <Button
                 asChild
                 variant="outline"
-                className="border-[#4A70A9]/50 text-[#EFECE3] hover:bg-[#4A70A9]/15 hover:border-[#8FABD4]/70 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
+                className="border-[#3b82f6]/50 text-[#f5f3f0] hover:bg-[#3b82f6]/15 hover:border-[#3b82f6]/70 px-8 py-6 rounded-lg text-base bg-transparent transition-all duration-300"
               >
                 <a href="#about-me" className="inline-flex items-center gap-2 group">
                   Let's Explore
-                  <ArrowDownFromLineIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowDownFromLineIcon className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
                 </a>
               </Button>
             </div>
 
             <div className="grid grid-cols-3 gap-4 pt-8">
               <div className="scroll-reveal" style={{ animationDelay: "0.3s" }}>
-                <div className="text-2xl font-bold text-[#8FABD4]">5+</div>
-                <p className="text-sm text-[#EFECE3]/50">Real World Projects</p>
+                <div className="text-2xl font-bold text-[#3b82f6]">5+</div>
+                <p className="text-sm text-[#f5f3f0]/50">Real World Projects</p>
               </div>
               <div className="scroll-reveal" style={{ animationDelay: "0.4s" }}>
-                <div className="text-2xl font-bold text-[#8FABD4]">4</div>
-                <p className="text-sm text-[#EFECE3]/50">Professional Oracle Certifications</p>
+                <div className="text-2xl font-bold text-[#3b82f6]">4</div>
+                <p className="text-sm text-[#f5f3f0]/50">Professional Oracle Certifications</p>
               </div>
               <div className="scroll-reveal" style={{ animationDelay: "0.5s" }}>
-                <div className="text-2xl font-bold text-[#8FABD4]">2</div>
-                <p className="text-sm text-[#EFECE3]/50">Internships</p>
+                <div className="text-2xl font-bold text-[#3b82f6]">2</div>
+                <p className="text-sm text-[#f5f3f0]/50">Internships</p>
               </div>
             </div>
           </div>
 
           {/* Right Content - Profile Image */}
           <div className="relative h-[500px] md:h-[600px]">
-            <div className="parallax-float absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#4A70A9]/20 via-[#8FABD4]/10 to-[#EFECE3]/5 blur-2xl opacity-55" />
-            <div className="absolute -inset-4 border border-[#4A70A9]/25 bg-gradient-to-br from-[#4A70A9]/8 to-[#8FABD4]/5 backdrop-blur-md mx-0 rounded-xl my-1 opacity-0" />
-            <div className="absolute -inset-2 bg-gradient-to-br from-black/60 via-[#0a0a0a]/40 to-black/50 backdrop-blur-lg opacity-75 rounded-full" />
+            <div className="parallax-float absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#3b82f6]/15 via-[#9d7f6f]/8 to-[#f5f3f0]/3 blur-2xl opacity-40" />
+            <div className="absolute -inset-4 border border-[#3b82f6]/20 bg-gradient-to-br from-[#3b82f6]/5 to-[#9d7f6f]/3 backdrop-blur-md mx-0 rounded-xl my-1 opacity-0" />
+            <div className="absolute -inset-2 bg-gradient-to-br from-[#0f1419]/60 via-[#1a1f2e]/40 to-[#0f1419]/50 backdrop-blur-lg opacity-75 rounded-full" />
 
-            <div className="absolute inset-0 overflow-hidden border-2 border-[#4A70A9]/40 bg-gradient-to-br from-[#4A70A9]/10 via-black/60 to-[#8FABD4]/5 backdrop-blur-xl shadow-2xl shadow-[#4A70A9]/15 rounded-full">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#4A70A9]/10 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-[#8FABD4]/5 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 overflow-hidden border-2 border-[#3b82f6]/30 bg-gradient-to-br from-[#3b82f6]/8 via-[#0f1419]/60 to-[#9d7f6f]/5 backdrop-blur-xl shadow-2xl shadow-[#3b82f6]/10 rounded-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#3b82f6]/8 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-[#9d7f6f]/3 to-transparent pointer-events-none" />
 
               <Image
                 src="/profile.png"

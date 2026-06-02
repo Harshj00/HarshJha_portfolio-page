@@ -222,6 +222,52 @@
     }
   }
 
+  @keyframes text-reveal {
+    from {
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes number-counter {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes stagger-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .text-reveal {
+    animation: text-reveal 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  }
+
+  .number-counter {
+    animation: number-counter 0.6s ease-out forwards;
+  }
+
+  .stagger-in {
+    animation: stagger-in 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
   .scroll-reveal {
     animation: scroll-reveal 0.8s ease-out forwards;
     opacity: 0;

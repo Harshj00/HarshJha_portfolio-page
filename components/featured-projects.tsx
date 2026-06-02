@@ -93,7 +93,7 @@ export function FeaturedProjects() {
                     {project.tags.map((tag) => (
                       <Badge
                         key={tag}
-                        className="bg-[#3b82f6]/15 text-[#3b82f6] border border-[#3b82f6]/30 hover:bg-[#3b82f6]/25 hover:border-[#3b82f6]/50 transition-colors duration-300"
+                        className="bg-[#3b82f6]/15 text-[#3b82f6] border border-[#3b82f6]/30 hover:bg-[#3b82f6]/25 hover:border-[#3b82f6]/50 transition-colors duration-300 h-8 px-3 py-1 flex items-center justify-center"
                       >
                         {tag}
                       </Badge>

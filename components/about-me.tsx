@@ -131,7 +131,7 @@ export function AboutMe() {
                 {skills.map((skill, index) => (
                   <Badge
                     key={skill}
-                    className="scroll-reveal bg-[#3b82f6]/15 text-[#3b82f6] border border-[#3b82f6]/30 hover:bg-[#3b82f6]/25 hover:border-[#3b82f6]/50 px-4 py-2 text-sm cursor-default transition-colors duration-300"
+                    className="scroll-reveal bg-[#3b82f6]/15 text-[#3b82f6] border border-[#3b82f6]/30 hover:bg-[#3b82f6]/25 hover:border-[#3b82f6]/50 h-8 px-3 py-1 text-sm cursor-default transition-colors duration-300 flex items-center justify-center"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     {skill}

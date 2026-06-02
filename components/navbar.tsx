@@ -11,7 +11,7 @@ export function Navbar() {
     { name: "Certifications", url: "#certifications", icon: Award },
     {
       name: "Resume",
-      url: "/Harsh_Kumar_Jha_Resume.pdf",
+      url: "/HarshKumarJha-Resume.pdf",
       icon: FileText,
     },
     { name: "Contact", url: "#contact", icon: Mail },

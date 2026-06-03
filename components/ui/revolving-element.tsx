@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useReducedMotion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 interface RevolvingElementProps {
   className?: string
@@ -19,11 +20,22 @@ export function RevolvingElement({
   opacity = 0.15,
 }: RevolvingElementProps) {
   const shouldReduceMotion = useReducedMotion()
+  const [isMobile, setIsMobile] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
-  // Hide revolving elements on mobile to improve performance
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768
+  useEffect(() => {
+    setMounted(true)
+    setIsMobile(window.innerWidth < 768)
+    
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
-  if (isMobile || shouldReduceMotion) {
+  if (!mounted || isMobile || shouldReduceMotion) {
     return null
   }
 

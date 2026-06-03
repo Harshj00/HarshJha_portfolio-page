@@ -16,14 +16,15 @@ export function DragonMascot() {
       const totalScroll = docHeight - windowHeight
       const progress = Math.min(scrolled / totalScroll, 1)
 
+      // Update scroll progress for continuous movement
       setScrollProgress(progress)
 
-      // Hide greeting after initial scroll
-      if (scrolled > 100) {
+      // Hide greeting after initial scroll (any amount)
+      if (scrolled > 50) {
         setShowGreeting(false)
       }
 
-      // Show flames at the end (90% of scroll)
+      // Show flames at the end (85% of scroll)
       if (progress > 0.85) {
         setShowFlames(true)
       } else {
@@ -31,7 +32,7 @@ export function DragonMascot() {
       }
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
